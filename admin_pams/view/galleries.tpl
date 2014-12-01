@@ -35,5 +35,4 @@
 		</div>
 	</div>
 
-</body>
-</html>
+<?php include("../inc/footer.inc.php") ?>
