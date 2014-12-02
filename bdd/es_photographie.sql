@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 01 Décembre 2014 à 14:45
+-- Généré le :  Mar 02 Décembre 2014 à 14:16
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -30,7 +30,19 @@ CREATE TABLE IF NOT EXISTS `administrator` (
 `id` int(11) NOT NULL,
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `administrator`
+--
+
+INSERT INTO `administrator` (`id`, `login`, `password`) VALUES
+(1, 'Sylvain', 'Sylvain'),
+(2, 'Medhi', 'Medhi'),
+(3, 'Alexis', 'Alexis'),
+(4, 'Alexis', 'Alexis'),
+(5, 'Patrice', 'Patrice'),
+(6, 'Jerome', 'Jerome');
 
 -- --------------------------------------------------------
 
@@ -58,7 +70,15 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `text` text NOT NULL,
   `seen` int(11) NOT NULL DEFAULT '0',
   `deleted` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `messages`
+--
+
+INSERT INTO `messages` (`id`, `sender_email`, `title`, `text`, `seen`, `deleted`) VALUES
+(1, 'ceciestun@test.fr', 'lolololol', 'Est-ce que ça marche?', 0, 0),
+(2, 'ceciestencoreun@test.fr', 'hello', 'T''es sûr que ça marche?', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -129,7 +149,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT pour la table `administrator`
 --
 ALTER TABLE `administrator`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `galleries`
 --
@@ -139,7 +159,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `pages`
 --
