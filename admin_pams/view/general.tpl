@@ -14,22 +14,22 @@
 
 							<form role="form">
 								<div class="form-group">
-									<label for="exampleInputEmail1">Titre de l'index</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Titre de l'index a récup en BDD">
+									<label for="title_index">Titre de l'index</label>
+									<input type="email" class="form-control" id="title_index" placeholder="Titre de l'index a récup en BDD">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">Message d'accueil:</label>
-									<textarea class="form-control" id="exampleInputPassword1" placeholder="Texte de l'index a récup en BDD"> 
+									<label for="message_home">Message d'accueil:</label>
+									<textarea class="form-control" id="message_home" placeholder="Texte de l'index a récup en BDD"> 
 									</textarea>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputFile">image associée au texte :</label>
-									<input type="file" id="exampleInputFile">
+									<label for="index_img">image associée au texte :</label>
+									<input type="file" id="index_img">
 								</div>
 
 								<div class="form-group">
-									<label for="exampleInputFile">background :</label>
-									<input type="file" id="exampleInputFile">
+									<label for="backgroun_img">background :</label>
+									<input type="file" id="backgroun_img">
 								</div>
 
 								<button type="submit" class="btn btn-default">Modifier</button>
