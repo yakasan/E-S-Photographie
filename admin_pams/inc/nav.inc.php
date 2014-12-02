@@ -8,16 +8,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Titre de la page</a>
+      <span class="navbar-brand" >Titre de la page</span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="../controller/homeController.php">Accueil<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/generalController.php">Général<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/presentController.php">Présentation<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/galleriesController.php">Galeries<span class="sr-only">(current)</span></a></li>
-        <li><a href="../controller/photosController.php">Photos<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/messagesController.php">Messages<span class="sr-only">(current)</span></a></li>
       </ul>
       
