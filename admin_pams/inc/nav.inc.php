@@ -14,11 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Général<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Présentation<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Galeries<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Photos<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Messages<span class="sr-only">(current)</span></a></li>
+        <li><a href="../controller/generalController.php">Général<span class="sr-only">(current)</span></a></li>
+        <li><a href="../controller/presentController.php">Présentation<span class="sr-only">(current)</span></a></li>
+        <li><a href="../controller/galleriesController.php">Galeries<span class="sr-only">(current)</span></a></li>
+        <li><a href="../controller/photosController.php">Photos<span class="sr-only">(current)</span></a></li>
+        <li><a href="../controller/messagesController.php">Messages<span class="sr-only">(current)</span></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
