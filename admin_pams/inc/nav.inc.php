@@ -17,7 +17,6 @@
         <li><a href="../controller/generalController.php">Général<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/presentController.php">Présentation<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/galleriesController.php">Galeries<span class="sr-only">(current)</span></a></li>
-        <li><a href="../controller/photosController.php">Photos<span class="sr-only">(current)</span></a></li>
         <li><a href="../controller/messagesController.php">Messages<span class="sr-only">(current)</span></a></li>
       </ul>
       
