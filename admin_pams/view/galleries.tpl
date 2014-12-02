@@ -8,11 +8,15 @@
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
+
 					<a href="#" class="list-group-item disabled">Liste des galeries</a>
+					<?php show_title_galleries() ?>
+					<!--
 					<a href="#" class="list-group-item">Galerie 1 </a>
 					<a href="#" class="list-group-item">Galerie 2</a>
 					<a href="#" class="list-group-item">Galerie 3</a>
 					<a href="#" class="list-group-item">Galerie 4</a>
+					-->
 					<button type="button" class="btn btn-default navbar-btn">Modifier</button>
 				</div>
 			</div>
