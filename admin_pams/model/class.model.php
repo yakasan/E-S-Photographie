@@ -1,15 +1,14 @@
 <?php
 
 class Model {
+
     public static $dns = "mysql:host=localhost; dbname=es_photographie";
     public static $user = "stagiaire";
     public static $pass = "stagiaire";
-    $connexion = new PDO($dns, $user, $pass);
-}/*
-function joinGalleries();{
 
-       
+    public static $connexion ;
 
+<<<<<<< HEAD
    $query = self::$connexion->prepare("SELECT j.nom nom_jeu, p.prenom prenom_proprietaire FROM proprietaires p INNER JOIN photos j
     ON j.ID_proprietaire = p.ID;
 }*/
@@ -22,3 +21,11 @@ function joinGalleries();{
     $req->closeCursor();
 }*/
 ?>
+=======
+    function __construct() {
+        $this->connexion = new PDO($dns, $user, $pass);
+    }   
+}
+?>
+
+>>>>>>> 03bc2887d234ac7248004b059dc647116b9d683c
