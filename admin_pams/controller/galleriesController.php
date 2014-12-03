@@ -13,8 +13,9 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 	if(!empty($_POST['textGallery'])){
 		$description=$_POST['textGallery'];
 	}
-	print_r($title);
-	print_r($description);
+	if(!empty($title) && !empty($description)){
+		$gallery->createGallery($title, $description);
+	}
 }
 
 
