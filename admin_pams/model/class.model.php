@@ -5,14 +5,20 @@ class Model {
     public static $user = "stagiaire";
     public static $pass = "stagiaire";
     $connexion = new PDO($dns, $user, $pass);
-}/*
+
+function getBy() {
+        $query = self::$connexion->prepare("SELECT * FROM ".$this->table.);
+        $query->execute();
+        return $query;
+    }
+
+    
+
 function joinGalleries();{
 
        
 
-   $query = self::$connexion->prepare("SELECT j.nom nom_jeu, p.prenom prenom_proprietaire FROM proprietaires p INNER JOIN photos j
-    ON j.ID_proprietaire = p.ID;
-}*/
+   
 function show_title_galleries(){
     $req=$connexion->query("SELECT * FROM galleries");
     while($row = $req->fetch())
@@ -20,5 +26,8 @@ function show_title_galleries(){
             echo "<a href='#' class='list-group-item'> ".$row['title']." </a>";
     }
     $req->closeCursor();
+}   
+  
 }
+
 ?>
