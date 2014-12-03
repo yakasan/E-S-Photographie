@@ -31,8 +31,9 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 		$description=$_POST['textGallery'];
 	}
 	if(!empty($title) && !empty($description)){
-		$gallery->createGallery($title, $description);
+		$gallery->kwnoFolderExist($title);
 		createGalleryFolder($title);
+		$gallery->createGallery($title, $description);
 		header('Location:galleriesController.php');
 	}
 }
