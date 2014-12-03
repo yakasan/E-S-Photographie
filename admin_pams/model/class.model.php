@@ -4,8 +4,18 @@ class Model {
     public static $dns = "mysql:host=localhost; dbname=es_photographie";
     public static $user = "stagiaire";
     public static $pass = "stagiaire";
-    $connexion = new PDO($dns, $user, $pass);
-}/*
+    public static $connexion ;
+
+    function __construct() {
+        $this->connexion = new PDO($dns, $user, $pass);
+    }
+
+    
+}
+
+
+
+/*
 function joinGalleries();{
 
        
