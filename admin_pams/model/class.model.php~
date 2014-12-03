@@ -10,7 +10,7 @@ class Model {
 
     function __construct() {
         $this->connexion = new PDO($dns, $user, $pass);
-    }   
+    }S   
 }
 ?>
 
