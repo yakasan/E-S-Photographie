@@ -14,6 +14,7 @@
 					<a href="#" class="list-group-item">Message 3</a>
 					<a href="#" class="list-group-item">Message 4</a>
 					<button type="button" class="btn btn-default navbar-btn">Visionner</button>
+					<?php printMessage(); ?>
 				</div>
 			</div>
 			<div class="col-md-2">
