@@ -2,14 +2,22 @@
 
 class Model {
 
+<<<<<<< HEAD
     private $dns = "mysql:host=localhost; dbname=es_photographie";
     private $user = "stagiaire";
     private $pass = "stagiaire";
 
     public static $connexion ;
+=======
+>>>>>>> 33c987bbb878208c04e70e207310c22b31a8a5fb
 
+    public $dns = "mysql:host=localhost; dbname=es_photographie";
+    public $user = "stagiaire";
+    public $pass = "stagiaire";
+    public $connexion ;
 
     function __construct() {
+<<<<<<< HEAD
         $this->connexion = new PDO($dns, $user, $pass);
     }
 
@@ -33,6 +41,11 @@ class Model {
 	}
 
 }
+=======
+
+        $this->connexion = new PDO($this->dns, $this->user, $this->pass);
+    }
+>>>>>>> 33c987bbb878208c04e70e207310c22b31a8a5fb
 
 }
 ?>
