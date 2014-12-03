@@ -2,13 +2,14 @@
 //require_once('../model/class.model.php');
 session_start();
 function connect(){
-            try {
-                $connexion = new PDO("mysql:host=localhost; dbname=es_photographie", "stagiaire", "stagiaire");
-            }catch(PDOException $e){
-                die ('erreur: '.$e->getmessage());
-            }
-        return($connexion) ;
+	try {
+        $connexion = new PDO("mysql:host=localhost; dbname=es_photographie", "stagiaire", "stagiaire");
+    }catch(PDOException $e){
+        die ('erreur: '.$e->getmessage());
     }
+    return($connexion) ;
+}
+
 
 function auth($login, $password){
 /*	$model=new Model();
