@@ -2,7 +2,7 @@
 
 <body>
 <?php include("../inc/nav.inc.php") ?>
-
+ 
 
 	<div class="container">
 		<div class="row">

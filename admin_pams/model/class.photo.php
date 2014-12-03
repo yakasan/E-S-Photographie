@@ -1,6 +1,6 @@
 <?php
 require_once('class.model.php');
-
+ 
 class Photo extends Model {
 
 	function AddPhoto($value1, $value2, $value3, $value4, $value5){
