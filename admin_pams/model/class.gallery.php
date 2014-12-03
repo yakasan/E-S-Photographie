@@ -24,6 +24,11 @@ class Gallery extends Model {
     public function createGallery($title, $description){
         $this->connexion->exec("INSERT INTO galleries (title, description) VALUES ('$title', '$description')");
     }
+    /*public function createGalleryFolder($title){
+        //$this->mkdir(path,mode,recursive,context);
+        $title=str_replace(" ","_",$title);
+        
+    }*/
 }
 
 
