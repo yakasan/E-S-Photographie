@@ -1,9 +1,11 @@
 <?php
 
 class Model {
+
     public static $dns = "mysql:host=localhost; dbname=es_photographie";
     public static $user = "stagiaire";
     public static $pass = "stagiaire";
+<<<<<<< HEAD
     $connexion = new PDO($dns, $user, $pass);
 
 function getBy() {
@@ -31,3 +33,17 @@ function show_title_galleries(){
 }
 
 ?>
+=======
+    public static $connexion ;
+
+    function __construct() {
+        $this->connexion = new PDO($dns, $user, $pass);
+    }
+
+    
+}
+
+
+
+?>
+>>>>>>> 411a4d9a530d32b255df5fb1f6c0226943c92497
