@@ -8,8 +8,6 @@ class Model {
 }/*
 function joinGalleries();{
 
-       
-
    $query = self::$connexion->prepare("SELECT j.nom nom_jeu, p.prenom prenom_proprietaire FROM proprietaires p INNER JOIN photos j
     ON j.ID_proprietaire = p.ID;
 }*/
