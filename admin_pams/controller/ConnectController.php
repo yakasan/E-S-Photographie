@@ -1,19 +1,17 @@
 <?php
-//require_once('../model/class.model.php');
 session_start();
-function connect(){
+require_once('../model/class.model.php');
+
+/*function connect(){
             try {
                 $connexion = new PDO("mysql:host=localhost; dbname=es_photographie", "stagiaire", "stagiaire");
             }catch(PDOException $e){
                 die ('erreur: '.$e->getmessage());
             }
         return($connexion) ;
-    }
-
-function auth($login, $password){
-/*	$model=new Model();
-	$bdd=$model->connect();*/
-	$bdd=connect();
+    }*/
+    function auth($login, $password){
+	$bdd=$connexion;
 	$resp=$bdd->query("SELECT login, password FROM administrator");
 	$logs=$resp->fetchAll(PDO::FETCH_ASSOC);
 	$password2=md5($password);
@@ -33,9 +31,12 @@ function auth($login, $password){
 
 }
 
+
+	$model=new Model();
+	
 if (isset($_POST['login'],$_POST['password'])){
 	$log=$_POST['login'];
 	$pass=$_POST['password'];
-	auth($log,$pass);
+	$model->auth($log,$pass);
 }
 ?>
