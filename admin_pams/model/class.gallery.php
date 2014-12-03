@@ -21,6 +21,9 @@ class Gallery extends Model {
         return $tableData->fetchAll(PDO::FETCH_ASSOC);
     }
     
+    public function createGallery($title, $description){
+        $this->connexion->exec("INSERT INTO galleries (title, description) VALUES ('$title', '$description')");
+    }
 }
 
 
