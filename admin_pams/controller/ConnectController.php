@@ -1,34 +1,11 @@
 <?php
 session_start();
-<<<<<<< HEAD
-require_once('../model/class.model.php');
-
-/*function connect(){
-            try {
-                $connexion = new PDO("mysql:host=localhost; dbname=es_photographie", "stagiaire", "stagiaire");
-            }catch(PDOException $e){
-                die ('erreur: '.$e->getmessage());
-            }
-        return($connexion) ;
-    }*/
-    function auth($login, $password){
-	$bdd=$connexion;
-=======
-function connect(){
-	try {
-        $connexion = new PDO("mysql:host=localhost; dbname=es_photographie", "stagiaire", "stagiaire");
-    }catch(PDOException $e){
-        die ('erreur: '.$e->getmessage());
-    }
-    return($connexion) ;
-}
-
+<
 
 function auth($login, $password){
 /*	$model=new Model();
 	$bdd=$model->connect();*/
 	$bdd=connect();
->>>>>>> 1140ca5d042e456ff87d852cc0ff670054127be6
 	$resp=$bdd->query("SELECT login, password FROM administrator");
 	$logs=$resp->fetchAll(PDO::FETCH_ASSOC);
 	$password2=md5($password);
