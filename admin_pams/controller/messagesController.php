@@ -1,9 +1,9 @@
 <?php 
 include("../view/messages.tpl")
 
-function printMessage(){
-	$result = displayMessage();
-	echo $result;
+$list = new Message;
+$result = displayMessage();
+print $result;
 }
 
 
