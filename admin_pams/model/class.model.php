@@ -1,24 +1,17 @@
 <?php
 
 class Model {
-    public static $dns = "mysql:host=localhost; dbname=es_photographie";
-    public static $user = "stagiaire";
-    public static $pass = "stagiaire";
-    $connexion = new PDO($dns, $user, $pass);
-}/*
-function joinGalleries();{
+    private static $user = "stagiaire";
+    private static $pass = "stagiaire";
+    private static $db = "es_photographie";
+    private static $host = "localhost";
 
-       
+    protected static $connexion = false;
 
-   $query = self::$connexion->prepare("SELECT j.nom nom_jeu, p.prenom prenom_proprietaire FROM proprietaires p INNER JOIN photos j
-    ON j.ID_proprietaire = p.ID;
-}*/
-function show_title_galleries(){
-    $req=$connexion->query("SELECT * FROM galleries");
-    while($row = $req->fetch())
-    {
-            echo "<a href='#' class='list-group-item'> ".$row['title']." </a>";
+    //constructeur pour récuperer les données de notre base située dans host>delphine   
+    function __construct() {
+        if (!self::$connexion) {
+            self::$connexion = new PDO('mysql:host='.self::$host.';dbname='.self::$db.';charset=utf8', self::$user, self::$pass);
+        }
     }
-    $req->closeCursor();
 }
-?>
