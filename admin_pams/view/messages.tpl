@@ -17,8 +17,10 @@
 							if (isset($recmess[$key]['id'])){
 								if ($recmess[$key]['seen']==1){
 									$colorb='lgrey';
+								}else{
+									$colorb='';
 								}
-						echo "<a href='#' class='list-group ".$colorb."' name='idmess".($recmess[$key]['id'])."'>".$recmess[$key]['title']."</br>Mail : ".$recmess[$key]['sender_email']."</a>" ;
+						echo "<a class='list-group-item ".$colorb."' name='idmess".($recmess[$key]['id'])."'> <input type='radio' name='idmess' value='".($recmess[$key]['id'])."'/> Titre : ".$recmess[$key]['title']."</br>Mail : ".$recmess[$key]['sender_email']."</a>" ;
 							}
 						}
 					}
@@ -30,7 +32,7 @@
 			</div>
 			<div class="col-md-2">
 			</div>
-			<div class="col-md-5">
+			<div class="col-md-5 divscrollbis">
 				<?php if (!empty($_POST)){ ?>
 				<table class="table">
 					<tr> 

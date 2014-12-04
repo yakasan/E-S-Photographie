@@ -9,9 +9,9 @@ class Message extends Model{
 		return $messs;
 	}
 	function recupMessIndiv($id){
-		$$result=$this->connexion->query("SELECT * FROM messages WHERE id='$id'");
+		$result=$this->connexion->query("SELECT * FROM messages WHERE id='$id'");
 		$messindiv=$result->fetchAll(PDO::FETCH_ASSOC);
-		return $messindinv;
+		return $messindiv;
 	}
 }
 
