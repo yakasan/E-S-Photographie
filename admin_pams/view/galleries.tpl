@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
-					<form method="POST">
+					<form method="POST" action="galleriesController.php">
 						<a href="#" class="list-group-item disabled">Liste des galeries</a>
 						<div class="divscroll">
 							<?php 
@@ -18,9 +18,10 @@
 									echo "</a>";
 								}
 							?>
-							<input type="submit" name"modifGallery" id"modifGallery" class="btn btn-default navbar-btn" value="Modifier"/>
-							<input type="submit" class="btn btn-default navbar-btn" value="Ajout de photos"/>
-							<input type="submit" class="btn btn-default navbar-btn" value="Supprimer"/>
+							<input type="submit" name="modifGallery" class="btn btn-default navbar-btn" value="Modifier"/>
+							<input type="submit" name="uploadPicture" class="btn btn-default navbar-btn" value="Ajout de photos"/>
+							<input type="submit" name="supprGallery" class="btn btn-default navbar-btn" value="Supprimer"/>
+
 						</div>
 					</form>
 				</div>
@@ -53,21 +54,15 @@
 				</div>	
 			</div>
 
-			<?php /*
-				if(!isset($_SESSION['galleryExist'])) {
+			<?php 
+				if(isset($_SESSION['alerte'])) {
 					?>
 					<script type="text/javascript">
 						alert('Galerie déjà éxistante, veuillez entrer un autre nom !');
 					</script>
 					<?php
 				} 
-				if(!isset($_SESSION['dataLess'])) {
-					?>
-					<script type="text/javascript">
-						alert('Veuillez entrer un Titre et une description !');
-					</script>
-					<?php
-				} */
+				
 			?>
 
 		</div>

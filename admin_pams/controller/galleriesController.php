@@ -40,6 +40,21 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 }
 $tableData = $gallery->getData();
 
-print_r($_POST);
+//print_r($_POST);
+if (isset($_POST['modifGallery'])&& isset($_POST['gallerieName'])) {
+ 	print_r($_POST['modifGallery']);
+ 	print_r($_POST['gallerieName']);
+    // j'ai cliqué sur « modifGallery »
+ 
+} elseif (isset($_POST['uploadPicture']&& isset($_POST['gallerieName'])) {
+ 	print_r($_POST['uploadPicture']);
+    // j'ai cliqué sur « uploadPicture »
+
+} elseif (isset($_POST['supprGallery']&& isset($_POST['gallerieName'])) {
+    // j'ai cliqué sur « supprGallery »
+    print_r($_POST['supprGallery']); 
+}else{
+	$_SESSION['alerte']= "Veuillez choisir une galerie"
+}
 include("../view/galleries.tpl");
 ?>
