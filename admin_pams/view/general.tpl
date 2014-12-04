@@ -8,11 +8,10 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-4">
 				<div class="input-group">
-					<form method="POST" action="../controller/generalController.php">
+					<form method="POST" action="../controller/PageController.php?page=7">
 						<div class="form-group">
 							<span class="input-group-addon">Edition général du site :</span>
 
-							<form role="form">
 								<div class="form-group">
 									<label for="title">Titre de l'index</label>
 									<input type="text" class="form-control" name="title" placeholder="Titre de l'index a récup en BDD">
@@ -27,9 +26,8 @@
 									<input type="file" name="url_bg">
 								</div>
 
-								<button type="submit" name="btnvalid"class="btn btn-default">Valider</button>
-							</form>
-						</div>
+								<input type="submit" name="btnvalid" class="btn btn-default" value="Valider"/>
+							</div>
 					</form>
 				</div>	
 			</div>

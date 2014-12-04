@@ -44,8 +44,8 @@ $tableData = $gallery->getData();
 //print_r($_POST);
 if (isset($_GET['modifGallery'])&& isset($_GET['gallerieName'])) {
  	// j'ai cliqué sur « modifGallery »
-	 	//print_r($_GET['modifGallery']);
-	 	//print_r($_GET['gallerieName']);
+	 	print_r($_GET['modifGallery']);
+	 	print_r($_GET['gallerieName']);
 	 	echo"action modif gallery";
 
 } elseif (isset($_GET['uploadPicture'])&& isset($_GET['gallerieName'])) {

@@ -34,7 +34,7 @@ class General extends Model {
 
     //public function editPages(){
     //    $this->connexion->exec("UPDATE pages SET title='$title', content='$content' WHERE id='1'");
-    }
+    //}
 }
 
 
