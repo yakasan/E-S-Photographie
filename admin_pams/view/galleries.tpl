@@ -47,7 +47,7 @@
 				</div>	
 			</div>
 
-			<?php 
+			<?php /*
 				if(!isset($_SESSION['galleryExist'])) {
 					?>
 					<script type="text/javascript">
@@ -61,7 +61,7 @@
 						alert('Veuillez entrer un Titre et une description !');
 					</script>
 					<?php
-				} 
+				} */
 			?>
 
 		</div>
