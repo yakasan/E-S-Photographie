@@ -27,7 +27,7 @@
 									<input type="file" name="url_bg">
 								</div>
 
-								<button type="submit" class="btn btn-default">Valider</button>
+								<button type="submit" name="btnvalid"class="btn btn-default">Valider</button>
 							</form>
 						</div>
 					</form>

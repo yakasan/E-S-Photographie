@@ -3,15 +3,22 @@ include('../model/class.photo.php');
 
 	if(isset($_POST['addPhoto'])){
 		$nouvellePhoto = new Photo();
-		$url = $_FILES['photo']['name'];
 		$tmpname = $_FILES['photo']['tmp_name'];
+		$extension = $_FILES['photo']['type'];
+		$extension = substr($extension, 6);
+
+		//print_r($extension);
+		//die;
+		//$extension=str_replace(".","/",$extension);
 		$title = $_POST['title'];
 		$desc = $_POST['desc'];
+		$chemin = $title.'.'.$extension;
+		//print_r($chemin);
+		//die;
 		//Ajout nouvelle photo Fichier correspondant
-		$nouvellePhoto->AddPhotoToFolder($tmpname, $url);
+		$nouvellePhoto->AddPhotoToFolder($tmpname, $title, $extension);
 		//Ajout nouvelle photo BBD
-		$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $url);
-
+		$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $chemin);
 	}
 
 	$Photo = new Photo();
