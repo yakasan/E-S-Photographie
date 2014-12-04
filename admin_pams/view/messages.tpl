@@ -8,27 +8,30 @@
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
-					<form>
+					
 					<a href="#" class="list-group-item disabled">Liste des messages</a>
+					<form method='POST'>
 					<div class="divscroll">
-					<a href="#" class="list-group-item">Message 1 </a>
-					<a href="#" class="list-group-item">Message 2</a>
-					<a href="#" class="list-group-item">Message 3</a>
-					<a href="#" class="list-group-item">Message 4</a>
-					<a href="#" class="list-group-item">Message 3</a>
-					<a href="#" class="list-group-item">Message 4</a>
-					<a href="#" class="list-group-item">Message 3</a>
-					<a href="#" class="list-group-item">Message 4</a>
-					<a href="#" class="list-group-item">Message 3</a>
-					<a href="#" class="list-group-item">Message 4</a>
+					<?php if (isset($recmess)){
+						foreach ($recmess as $key => $value) {
+							if (isset($recmess[$key]['id'])){
+								if ($recmess[$key]['seen']==1){
+									$colorb='lgrey';
+								}
+						echo "<a href='#' class='list-group ".$colorb."' name='idmess".($recmess[$key]['id'])."'>".$recmess[$key]['title']."</br>Mail : ".$recmess[$key]['sender_email']."</a>" ;
+							}
+						}
+					}
+					?>
 					</div>
-					<button type="button" class="btn btn-default navbar-btn">Visionner</button>
+					<input type="submit" class="btn btn-default navbar-btn" value="Visionner"/>
 					</form>
 				</div>
 			</div>
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-5">
+				<?php if (!empty($_POST)){ ?>
 				<table class="table">
 					<tr> 
 						<th>Affichage du message: </th>
@@ -37,17 +40,20 @@
 					<tr>
 						<td>
 							<form method="GET">
-							<span>Titre </span>
+							<span>Titre : </span></br>
+							<span><?= $recmessindiv[0]['title'] ; ?></span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<span>Email </span>
+							<span>Email : </span></br>
+							<span><?= $recmessindiv[0]['sender_email']; ?></span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<span>Texte </span>
+							<span>Texte : </span></br>
+							<span><?= $recmessindiv[0]['text']; ?></span>
 						</td>
 					</tr>
 					<tr>
@@ -58,6 +64,7 @@
 						</td>
 					</tr>	
 				</table>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
