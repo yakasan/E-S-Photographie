@@ -11,17 +11,21 @@ include('../model/class.photo.php');
 		$tmpname = $_FILES['photo']['tmp_name'];
 		$title = $_POST['title'];
 		$desc = $_POST['desc'];
-		//Ajout nouvelle photo BBD
-		$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $url);
 		//Ajout nouvelle photo Fichier correspondant
 		$nouvellePhoto->AddPhotoToFolder($tmpname, $url);
+		//print_r($chemin);
+		//die;
+		//Ajout nouvelle photo BBD
+		$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $url);
+		
 
 	}
 
 	$Photo = new Photo();
 	$Photos = $Photo->DisplayPhoto();
-	$listePhotos = $Photos->fetchAll(PDO::FETCH_ASSOC);
-	
+	$listePhoto = $Photos->fetchAll(PDO::FETCH_ASSOC);
+	print_r($listePhoto);
+	//die;
 
 
 
