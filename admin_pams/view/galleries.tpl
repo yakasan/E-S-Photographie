@@ -19,6 +19,7 @@
 							}
 						?>
 						<button type="button"  value="modifier" name="modifGallery" class="btn btn-default navbar-btn">Modifier</button>
+						<button type="button"  value="modifier" name="uploadGallery" class="btn btn-default navbar-btn">Ajout de photos</button>
 						<button type="button" value="supprimer" name="supprGallery" class="btn btn-default navbar-btn">Supprimer</button>
 					</div>
 				</div>
