@@ -1,17 +1,24 @@
 <?php 
-include("../view/home.tpl");
+
 require_once('../model/class.model.php');
-	$model= New Model();
+	
 if (isset($_POST['login'],$_POST['password'])){
+	$model= New Model();
 	$log=$_POST['login'];
 	$pass=$_POST['password'];
 	if ($model->auth($log,$pass)){
 		$_SESSION['login']=$log;
 		$_SESSION['admin']=1;
-		header("Location : homeController.php");
+		include("../view/home.tpl");
+		die;
 	}else{
+
 		echo "Mot de Passe/Utilisateur incorrect.";
-		die (header("Location : ../index.html"));
+		header("Location : ../index.html");
+		die;
 	}
+}
+if (isset($_SESSION['login']) && $_SESSION['admin']==1){
+	require_once("../view/home.tpl");
 }
 ?>

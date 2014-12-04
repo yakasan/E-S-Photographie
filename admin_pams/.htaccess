@@ -1,0 +1,8 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+
+RewriteRule ^index.php$ index.html
+
+RewriteCond %{HTTP_REFERER} !^$ 
+RewriteRule ^index.php?page=1$ controller/homeController [L] 
