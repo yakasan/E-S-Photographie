@@ -2,23 +2,27 @@
 include('../model/class.photo.php');
 
 	if(isset($_POST['addPhoto'])){
-		$nouvellePhoto = new Photo();
-		$tmpname = $_FILES['photo']['tmp_name'];
-		$extension = $_FILES['photo']['type'];
-		$extension = substr($extension, 6);
+		//if($_POST['title'] != ''){
+			$nouvellePhoto = new Photo();
+			print_r($_FILES);
+			die;
+			$tmpname = $_FILES['photo']['tmp_name'];
+			$extension = $_FILES['photo']['type'];
+			$extension = substr($extension, 6);
+			$title = $_POST['title'];
+			$desc = $_POST['desc'];
+			$chemin = $title.'.'.$extension;
+			$exif = exif_read_data($_FILES['photo']['tmp_name'], 0, true);
+			print_r($exif);
+			die;
+			//Ajout nouvelle photo Fichier correspondant
+			$nouvellePhoto->AddPhotoToFolder($tmpname, $title, $extension);
+			//Ajout nouvelle photo BBD
+			$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $chemin);
 
-		//print_r($extension);
-		//die;
-		//$extension=str_replace(".","/",$extension);
-		$title = $_POST['title'];
-		$desc = $_POST['desc'];
-		$chemin = $title.'.'.$extension;
-		//print_r($chemin);
-		//die;
-		//Ajout nouvelle photo Fichier correspondant
-		$nouvellePhoto->AddPhotoToFolder($tmpname, $title, $extension);
-		//Ajout nouvelle photo BBD
-		$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $chemin);
+		//}else{
+		//	echo "Veuillez ajouté un titre";
+		//}
 	}
 
 	$Photo = new Photo();

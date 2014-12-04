@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<label for="addPhoto">Ajouter une photo à la galerie</label>
+				<label for="addPhoto">Ajouter une photo à la galerie (2Mo max)</label>
 				<form method="POST"  enctype="multipart/form-data">
 					<input type="file" name="photo">
 					<label for="title">Ajouter un titre</label>
