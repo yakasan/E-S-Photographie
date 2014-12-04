@@ -1,10 +1,8 @@
 <?php 
-
+session_start();
 require_once("../model/class.gallery.php");
 
 $gallery = new Gallery();
-
-$tableData = $gallery->getData();
 //print_r($tableData);
 
 function createGalleryFolder ($title){
@@ -18,19 +16,28 @@ function createGalleryFolder ($title){
 		mkdir ("C:/xampp/htdocs/E-S-Photographie/gallery/$title", "0777"); 
 	} 
 }
+if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
+	$_SESSION['dataLess']="infos manquantes";
+}else{
+	unset($_SESSION['dataLess']);
+}
 
 if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 		$title=$_POST['nameGallery'];
 		$description=$_POST['textGallery'];
 
 		$exist = $gallery->knowFolderExist($title);
-		if ($exist=1){
+
+		if ($exist){
+			$_SESSION['galleryExist']="Galerie déjà existante";
+		}else{
 			$gallery->createGallery($title, $description);
 			createGalleryFolder($title);
 		}
 
-		//header('Location:galleriesController.php');
+		$_POST='';
+		unset($_SESSION['galleryExist']);
 }
-
+$tableData = $gallery->getData();
 include("../view/galleries.tpl");
 ?>

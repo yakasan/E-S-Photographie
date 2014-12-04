@@ -1,6 +1,7 @@
 <?php 
 
 require_once('class.model.php');
+
 class General extends Model {
 
     public $id;
@@ -11,23 +12,25 @@ class General extends Model {
     public $type;
 
 
-    function __construct($title, $content, $image , $background, $type=0, $id=0 ) {
+    /*function __construct($title, $content, $image , $background, $type=0, $id=0 ) {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
         $this->image = $image;
         $this->background = $background;
         $this->type = $type;
-    }
+    }*/
     
     public function getDataPages(){
-        $this->connexion->exec("SELECT * FROM pages");
-        return $row=$this->fetchAll(PDO::FETCH_ASSOC);
+        $tableData = $this->connexion->query("SELECT * FROM pages");
+        return $tableData->fetchAll(PDO::FETCH_ASSOC);
+        print_r($tableData);
+        echo "méthode getdatapage";
     }
     
-    public function makePages(){
-        print_r($this->connexion);
-        $this->connexion->exec("INSERT INTO pages (id, title, content, image , background) VALUES('$title','$content','$image','$background')");
+    public function makePages($title, $content){
+        $this->connexion->exec("INSERT INTO pages (title, content) VALUES('$title', '$content')");
+        echo "la page a été crée";
     }
 
     public function editPages(){
@@ -36,4 +39,4 @@ class General extends Model {
 }
 
 
- ?>
+?>
