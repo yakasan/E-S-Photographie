@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 02 Décembre 2014 à 14:16
+-- Généré le :  Jeu 04 Décembre 2014 à 13:58
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -30,19 +30,7 @@ CREATE TABLE IF NOT EXISTS `administrator` (
 `id` int(11) NOT NULL,
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Contenu de la table `administrator`
---
-
-INSERT INTO `administrator` (`id`, `login`, `password`) VALUES
-(1, 'Sylvain', 'Sylvain'),
-(2, 'Medhi', 'Medhi'),
-(3, 'Alexis', 'Alexis'),
-(4, 'Alexis', 'Alexis'),
-(5, 'Patrice', 'Patrice'),
-(6, 'Jerome', 'Jerome');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -53,9 +41,18 @@ INSERT INTO `administrator` (`id`, `login`, `password`) VALUES
 CREATE TABLE IF NOT EXISTS `galleries` (
 `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `desc` text NOT NULL,
+  `description` text NOT NULL,
   `img_present` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `title`, `description`, `img_present`) VALUES
+(1, 'Noir et blanc', 'Galeries photos en noir et blanc ', ''),
+(2, 'test', 'gdfd', ''),
+(3, 'wdcvc', 'xgdfgd', '');
 
 -- --------------------------------------------------------
 
@@ -65,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `galleries` (
 
 CREATE TABLE IF NOT EXISTS `messages` (
 `id` int(11) NOT NULL,
+  `date` date NOT NULL,
   `sender_email` varchar(255) NOT NULL,
   `title` text NOT NULL,
   `text` text NOT NULL,
@@ -76,9 +74,9 @@ CREATE TABLE IF NOT EXISTS `messages` (
 -- Contenu de la table `messages`
 --
 
-INSERT INTO `messages` (`id`, `sender_email`, `title`, `text`, `seen`, `deleted`) VALUES
-(1, 'ceciestun@test.fr', 'lolololol', 'Est-ce que ça marche?', 0, 0),
-(2, 'ceciestencoreun@test.fr', 'hello', 'T''es sûr que ça marche?', 0, 0);
+INSERT INTO `messages` (`id`, `date`, `sender_email`, `title`, `text`, `seen`, `deleted`) VALUES
+(1, '2014-12-01', 'dgdgdfgd@drld.fr', 'titlesdmgdwhj', 'drhgrdg d gdjhb vh  iuhjg hj gbhjg jhgkugu gkj g  jhg', 0, 0),
+(2, '2014-12-10', 'dvsvvdsv@dfvfd.gr', 'sdffdsgdfgxjfjkh <xgkdgh kj', 'xfhfxb fty gd', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -90,8 +88,15 @@ CREATE TABLE IF NOT EXISTS `pages` (
 `id` int(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `type` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `type` varchar(255) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `pages`
+--
+
+INSERT INTO `pages` (`id`, `title`, `content`, `type`) VALUES
+(1, '', '', '0');
 
 -- --------------------------------------------------------
 
@@ -149,12 +154,12 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT pour la table `administrator`
 --
 ALTER TABLE `administrator`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `galleries`
 --
 ALTER TABLE `galleries`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
@@ -164,7 +169,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `pages`
 --
 ALTER TABLE `pages`
-MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `photos`
 --
