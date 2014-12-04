@@ -13,11 +13,14 @@
 					<div class="divscroll">
 						<?php 
 							foreach ($tableData as $value) {
-								echo "<a href='#' class='list-group-item'>". $value['title']." </a>";
+								echo "<a class='list-group-item'>";
+								echo "<input type='radio' value=".$value['title']." name='gallerieName'>".$value['title'];
+								echo "</a>";
 							}
 						?>
-						<button type="button"  value="modifier" id="modifier" class="btn btn-default navbar-btn">Modifier</button>
-						<button type="button" value="supprimer" id="supprimer" class="btn btn-default navbar-btn">Supprimer</button>
+						<button type="button"  value="modifier" name="modifGallery" class="btn btn-default navbar-btn">Modifier</button>
+						<button type="button"  value="modifier" name="uploadGallery" class="btn btn-default navbar-btn">Ajout de photos</button>
+						<button type="button" value="supprimer" name="supprGallery" class="btn btn-default navbar-btn">Supprimer</button>
 					</div>
 				</div>
 			</div>

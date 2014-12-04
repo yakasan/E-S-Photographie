@@ -32,13 +32,24 @@
 				<label for="modifPhoto">Modifier une photo de la galerie</label>
 				<form method="POST">
 					<div>
-						<?php foreach($tablePhoto as $key => $value):{?>
+						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
-							<?= $key ?>
-							<?= $value ?>
+							<div>
+								<?= "<img src='../../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
+							</div>
+							<div>
+								<?= $key ?>
+								<?= $listePhoto[$key]["id"] ?>
+								<?= $listePhoto[$key]["id_gallery"] ?>
+								<?= $listePhoto[$key]["title"] ?>
+								<?= $listePhoto[$key]["description"] ?>
+								<?= $listePhoto[$key]["exif"] ?>
+								<?= $listePhoto[$key]["url"] ?>
+							</div>
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>
 							<input type="radio" name="cover">Cover</input><br>
+							<input type="button" value="Supprimer" onclick='DeletePhoto(".$listePhoto[$key][\'id\'].")><br>
 						</div>
 						<?php }endforeach;?>
 						<input type="submit" value="Modifier"  name="modifPhoto">
@@ -47,7 +58,6 @@
 			</div>
 		</div>
 	</div>
-	
 	
 	<br>
 	<br>
