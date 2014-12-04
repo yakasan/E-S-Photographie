@@ -9,12 +9,16 @@ class Photo extends Model {
 
 	function AddPhotoToFolder($tmpname,$url){
 		move_uploaded_file($tmpname, "C:/xampp/htdocs/E-S-Photographie/gallery/test/".$url);
-		//$chemin = "C:/xampp/htdocs/E-S-Photographie/gallery/test/".$url;
-		//return $chemin;
 	}
 
 	function DisplayPhoto(){
 		$query = $this->connexion->prepare("SELECT * FROM photos");
+		$query->execute();
+		return $query;
+	}
+
+	function DeletePhoto($id){
+		$query = $this->connexion->prepare("DELETE * FROM photos WHERE id=`".$id."`");
 		$query->execute();
 		return $query;
 	}

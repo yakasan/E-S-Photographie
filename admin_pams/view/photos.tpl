@@ -35,7 +35,7 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
-								<?= "<img src='../gallery/test/".$listePhoto[$key]['url']."'>" ?>
+								<?= "<img src='../../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
 							</div>
 							<div>
 								<?= $key ?>
@@ -49,6 +49,7 @@
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>
 							<input type="radio" name="cover">Cover</input><br>
+							<input type="button" value="Supprimer" onclick='DeletePhoto(".$listePhoto[$key][\'id\'].")><br>
 						</div>
 						<?php }endforeach;?>
 						<input type="submit" value="Modifier"  name="modifPhoto">
