@@ -40,6 +40,6 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 }
 $tableData = $gallery->getData();
 
-print_r($_POST['modifGallery']);
+print_r($_POST);
 include("../view/galleries.tpl");
 ?>
