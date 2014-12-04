@@ -54,7 +54,7 @@
 					<tr>
 						<td>
 							<span>Texte : </span></br>
-							<span><?= $recmessindiv[0]['text']; ?></span>
+							<span><?= utf8_encode($recmessindiv[0]['text']); ?></span>
 						</td>
 					</tr>
 					<tr>
