@@ -1,0 +1,3 @@
+ressources et suggestion site E&S photographie :
+
+- lecture des métadonnées photo : exif_read_data --> http://php.net/manual/fr/function.exif-read-data.php

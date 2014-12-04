@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-4">
 				<div class="input-group">
-					<form method="POST" action="../controller/testadd2.php">
+					<form method="POST" action="../controller/generalController.php">
 						<div class="form-group">
 							<span class="input-group-addon">Edition général du site :</span>
 
