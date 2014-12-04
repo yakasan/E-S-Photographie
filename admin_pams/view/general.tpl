@@ -23,11 +23,6 @@
 									</textarea>
 								</div>
 								<div class="form-group">
-									<label for="url_im">image associée au texte :</label>
-									<input type="file" name="url_img">
-								</div>
-
-								<div class="form-group">
 									<label for="url_bg">background :</label>
 									<input type="file" name="url_bg">
 								</div>
