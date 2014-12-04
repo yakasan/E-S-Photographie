@@ -5,17 +5,13 @@ require_once("../model/class.gallery.php");
 $gallery = new Gallery();
 
 $tableData = $gallery->getData();
+//print_r($tableData);
 
 function createGalleryFolder ($title){
 	$title=strtolower($title);
 	$title=str_replace(" ","_",$title);
 	//On vérifie l'existence du répertoire $Num et on le crée si il n'existe pas 
 	if (is_dir("C:/xampp/htdocs/E-S-Photographie/gallery/$title")){ 
-		?>
-		<script language="javascript">
-			alert("Dossier déjà existant");
-		</script> 
-		<?php
 		header('Location:galleriesController.php');
 	} 
 	if (!is_dir("C:/xampp/htdocs/E-S-Photographie/gallery/$title")){ 
@@ -24,22 +20,17 @@ function createGalleryFolder ($title){
 }
 
 if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
-	if(!empty($_POST['nameGallery'])){
 		$title=$_POST['nameGallery'];
-	}
-	if(!empty($_POST['textGallery'])){
 		$description=$_POST['textGallery'];
-	}
-	if(!empty($title) && !empty($description)){
-		$gallery->kwnoFolderExist($title);
-		createGalleryFolder($title);
-		$gallery->createGallery($title, $description);
-		header('Location:galleriesController.php');
-	}
+
+		$exist = $gallery->knowFolderExist($title);
+		if ($exist=1){
+			$gallery->createGallery($title, $description);
+			createGalleryFolder($title);
+		}
+
+		//header('Location:galleriesController.php');
 }
-
-
-//print_r($tableData);
 
 include("../view/galleries.tpl");
 ?>
