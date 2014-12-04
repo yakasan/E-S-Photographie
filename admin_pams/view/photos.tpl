@@ -49,7 +49,7 @@
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>
 							<input type="radio" name="cover">Cover</input><br>
-							<input type="button" value="Supprimer" onclick='DeletePhoto(".$listePhoto[$key][\'id\'].")><br>
+							<!--<input type="button" value="Supprimer" onclick=Delete(<?php//$listePhoto[$key]['id']?>)><br>-->
 						</div>
 						<?php }endforeach;?>
 						<input type="submit" value="Modifier"  name="modifPhoto">
