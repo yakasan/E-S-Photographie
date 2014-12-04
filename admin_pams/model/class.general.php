@@ -24,17 +24,15 @@ class General extends Model {
     public function getDataPages(){
         $tableData = $this->connexion->query("SELECT * FROM pages");
         return $tableData->fetchAll(PDO::FETCH_ASSOC);
-        print_r($tableData);
-        echo "méthode getdatapage";
+
     }
     
     public function makePages($title, $content){
-        $this->connexion->exec("INSERT INTO pages (title, content) VALUES('$title', '$content')");
-        echo "la page a été crée";
+        $this->connexion->exec("INSERT INTO pages (title, content,type) VALUES('$title', '$content', 'index')");
     }
 
     public function editPages(){
-        $this->connexion->exec("UPDATE pages SET title=$title, content=$content, image=$image background=$background type=$type WHERE title=$title");
+        $this->connexion->exec("UPDATE pages SET title=$title, content=$content WHERE title=$title");
     }
 }
 

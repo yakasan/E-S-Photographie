@@ -7,20 +7,11 @@ $title=$_POST['title'];
 $content=$_POST['content'];
 $image=$_POST['url_img']; 
 $background=$_POST['url_bg'];
-/*
-print_r($title);
-print_r($content);
-print_r($image);
-print_r($background);*/
-
 
 $m = new General();
-
-echo "string";
 $m->getDataPages();
-echo "strvgjfing";
-$m->makePages($title, $content);
-echo "vghjfgfhf";
+$m->editPages();
+//$m->makePages($title, $content);
 /*
 if (!empty($title)) {
 	$m->makePages();
