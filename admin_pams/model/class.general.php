@@ -26,8 +26,7 @@ class General extends Model {
     }
     
     public function makePages(){
-        print_r($this->connexion);
-        $this->connexion->exec("INSERT INTO pages (id, title, content, image , background) VALUES('$title','$content','$image','$background')");
+        $this->connexion->exec("INSERT INTO pages (id, title, content) VALUES('$title','$content')");
     }
 
     public function editPages(){
