@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
-					<form method="POST" action="galleriesController.php">
+					<form method="GET" action="galleriesController.php">
 						<a href="#" class="list-group-item disabled">Liste des galeries</a>
 						<div class="divscroll">
 							<?php 
@@ -53,18 +53,6 @@
 					</form>
 				</div>	
 			</div>
-
-			<?php 
-				if(isset($_SESSION['alerte'])) {
-					?>
-					<script type="text/javascript">
-						alert('Galerie déjà éxistante, veuillez entrer un autre nom !');
-					</script>
-					<?php
-				} 
-				
-			?>
-
 		</div>
 	</div>
 
