@@ -39,7 +39,5 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 		unset($_SESSION['galleryExist']);
 }
 $tableData = $gallery->getData();
-
-print_r($_POST['modifGallery']);
-include("../view/galleries.tpl");
+include("../view/editGalleries.tpl");
 ?>
