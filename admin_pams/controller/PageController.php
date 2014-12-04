@@ -25,6 +25,10 @@ if (isset($_GET['page'])){
 		include('presentController.php');
 		die;
 	}
+	if ($_GET['page']==7){
+		include('generalController.php');
+		die;
+	}
 
 }
 ?>
