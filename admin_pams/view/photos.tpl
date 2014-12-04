@@ -8,8 +8,8 @@
 		<div class="row">
 			<div class="col-md-4">
 				<label for="addPhoto">Ajouter une photo à la galerie</label>
-				<form method="POST" >
-					<input type="file">
+				<form method="POST"  enctype="multipart/form-data">
+					<input type="file" name="photo">
 					<label for="title">Ajouter un titre</label>
 					<input type="text" name="title">
 					<label for="desc">Ajouter une description</label>
@@ -31,12 +31,18 @@
 			<div class="col-md-3">
 				<label for="modifPhoto">Modifier une photo de la galerie</label>
 				<form method="POST">
-					<?php// foreach($.... as $key => $value):{?>
-						thumbnail<br>
-						<input type="checkbox">Modifier</input>
-						<input type="radio" name="cover">Cover</input><br>
-					<?php// }endforeach;?>
-					<input type="submit" value="Modifier"  name="modifPhoto">
+					<div>
+						<?php foreach($tablePhoto as $key => $value):{?>
+						<div>
+							<?= $key ?>
+							<?= $value ?>
+							thumbnail<br>
+							<input type="checkbox">Modifier</input>
+							<input type="radio" name="cover">Cover</input><br>
+						</div>
+						<?php }endforeach;?>
+						<input type="submit" value="Modifier"  name="modifPhoto">
+					</div>
 				</form>
 			</div>
 		</div>

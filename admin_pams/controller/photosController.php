@@ -1,16 +1,30 @@
 <?php 
 include('../model/class.photo.php');
 
+//$idGallery = $_GET['id'];
  
 	if(isset($_POST['addPhoto'])){
-		//print_r($_POST);
-		//die();
+		//print_r($_FILES);
+		//die;
 		$nouvellePhoto = new Photo();
+		$url = $_FILES['photo']['name'];
+		$tmpname = $_FILES['photo']['tmp_name'];
 		$title = $_POST['title'];
 		$desc = $_POST['desc'];
-		//die;
-		$nouvellePhoto->AddPhoto(' ', $title, $desc, ' ', ' ');
+		//Ajout nouvelle photo BBD
+		$nouvellePhoto->AddPhotoToDBB(' ', $title, $desc, ' ', $url);
+		//Ajout nouvelle photo Fichier correspondant
+		$nouvellePhoto->AddPhotoToFolder($tmpname, $url);
+
 	}
 
-include("../view/photos.tpl")
+	$Photo = new Photo();
+	$Photos = $Photo->DisplayPhoto();
+	$listePhotos = $Photos->fetchAll(PDO::FETCH_ASSOC);
+	
+
+
+
+
+include("../view/photos.tpl");
  ?>
