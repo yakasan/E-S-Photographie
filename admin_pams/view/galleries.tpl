@@ -8,20 +8,21 @@
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
-
-					<a href="#" class="list-group-item disabled">Liste des galeries</a>
-					<div class="divscroll">
-						<?php 
-							foreach ($tableData as $value) {
-								echo "<a class='list-group-item'>";
-								echo "<input type='radio' value=".$value['title']." name='gallerieName'>".$value['title'];
-								echo "</a>";
-							}
-						?>
-						<button type="button"  value="modifier" name="modifGallery" class="btn btn-default navbar-btn">Modifier</button>
-						<button type="button"  value="modifier" name="uploadGallery" class="btn btn-default navbar-btn">Ajout de photos</button>
-						<button type="button" value="supprimer" name="supprGallery" class="btn btn-default navbar-btn">Supprimer</button>
-					</div>
+					<form method="POST">
+						<a href="#" class="list-group-item disabled">Liste des galeries</a>
+						<div class="divscroll">
+							<?php 
+								foreach ($tableData as $value) {
+									echo "<a class='list-group-item'>";
+									echo "<input type='radio' value=".$value['title']." name='gallerieName'>".$value['title'];
+									echo "</a>";
+								}
+							?>
+							<input type="submit" name"modifGallery" id"modifGallery" class="btn btn-default navbar-btn" value="Modifier"/>
+							<input type="submit" class="btn btn-default navbar-btn" value="Ajout de photos"/>
+							<input type="submit" class="btn btn-default navbar-btn" value="Supprimer"/>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="col-md-2">
