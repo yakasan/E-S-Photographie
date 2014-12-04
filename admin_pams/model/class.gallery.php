@@ -22,18 +22,19 @@ class Gallery extends Model {
     }
     
     public function createGallery($title, $description){
-       // $this->connexion->exec("INSERT INTO galleries (title, description) VALUES ('$title', '$description')");
+       $this->connexion->exec("INSERT INTO galleries (title, description) VALUES ('$title', '$description')");
     }
 
     public function knowFolderExist($title){ 
         $folderExist = $this->connexion->query("SELECT * FROM galleries WHERE title = '$title'");
-        $folderExist->fetchAll(PDO::FETCH_ASSOC);
+        $result = $folderExist->fetchAll(PDO::FETCH_ASSOC);
+        //print_r($result);
 
-        if (!empty($folderExist))
+        if (!empty($result))
         {  
-            return false;
-        }else{
             return true;
+        }else{
+            return false;
         }
     }
     /*public function createGalleryFolder($title){

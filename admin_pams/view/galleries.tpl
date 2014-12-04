@@ -1,7 +1,7 @@
 <?php include("../inc/header.inc.php") ?>
 
 <body>
-<?php //include("../inc/nav.inc.php") ?>
+<?php include("../inc/nav.inc.php") ?>
 
 
 	<div class="container">
@@ -46,6 +46,24 @@
 					</form>
 				</div>	
 			</div>
+
+			<?php 
+				if(!isset($_SESSION['galleryExist'])) {
+					?>
+					<script type="text/javascript">
+						alert('Galerie déjà éxistante, veuillez entrer un autre nom !');
+					</script>
+					<?php
+				} 
+				if(!isset($_SESSION['dataLess'])) {
+					?>
+					<script type="text/javascript">
+						alert('Veuillez entrer un Titre et une description !');
+					</script>
+					<?php
+				} 
+			?>
+
 		</div>
 	</div>
 
