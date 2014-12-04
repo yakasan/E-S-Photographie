@@ -6,15 +6,24 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5 divscroll">
+			<div class="col-md-5">
 				<div class="list-group">
+					<form>
 					<a href="#" class="list-group-item disabled">Liste des messages</a>
+					<div class="divscroll">
 					<a href="#" class="list-group-item">Message 1 </a>
 					<a href="#" class="list-group-item">Message 2</a>
 					<a href="#" class="list-group-item">Message 3</a>
 					<a href="#" class="list-group-item">Message 4</a>
+					<a href="#" class="list-group-item">Message 3</a>
+					<a href="#" class="list-group-item">Message 4</a>
+					<a href="#" class="list-group-item">Message 3</a>
+					<a href="#" class="list-group-item">Message 4</a>
+					<a href="#" class="list-group-item">Message 3</a>
+					<a href="#" class="list-group-item">Message 4</a>
+					</div>
 					<button type="button" class="btn btn-default navbar-btn">Visionner</button>
-					<?php printMessage(); ?>
+					</form>
 				</div>
 			</div>
 			<div class="col-md-2">

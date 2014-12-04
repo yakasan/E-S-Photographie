@@ -1,13 +1,17 @@
 <?php
-
-require_once("model/class.model.php");
+require_once("../model/class.model.php");
 
 class Message extends Model{
 	
-	function displayMessage(){
-		$result= parent::$connexion->query("SELECT title,id FROM message");
-		return $result;
+	function recupMessage(){
+		$result=parent::$connexion->query("SELECT * FROM message WHERE deleted='0' ORDER BY id DESC");
+		$messs=$result->fetchAll(FETCH_ASSOC);
+		return $messs;
 	}
+	
+	
 }
 
+
 ?>
+
