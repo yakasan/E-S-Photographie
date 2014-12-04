@@ -6,7 +6,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-md-5 divscroll">
 				<div class="list-group">
 					<a href="#" class="list-group-item disabled">Liste des messages</a>
 					<a href="#" class="list-group-item">Message 1 </a>

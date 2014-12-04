@@ -3,10 +3,13 @@ include('../model/class.photo.php');
 
  
 	if(isset($_POST['addPhoto'])){
-		//print_r($_POST['addPhoto']);
+		//print_r($_POST);
 		//die();
 		$nouvellePhoto = new Photo();
-		$nouvellePhoto->AddPhoto(' ', $_POST['addPhoto']['title'], $_POST['addPhoto']['desc'], ' ', ' ');
+		$title = $_POST['title'];
+		$desc = $_POST['desc'];
+		//die;
+		$nouvellePhoto->AddPhoto(' ', $title, $desc, ' ', ' ');
 	}
 
 include("../view/photos.tpl")
