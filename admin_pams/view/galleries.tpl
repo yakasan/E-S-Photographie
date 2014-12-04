@@ -16,8 +16,8 @@
 								echo "<a href='#' class='list-group-item'>". $value['title']." </a>";
 							}
 						?>
-						<button type="button" class="btn btn-default navbar-btn">Modifier</button>
-						<button type="button" class="btn btn-default navbar-btn">Supprimer</button>
+						<button type="button"  value="modifier" id="modifier" class="btn btn-default navbar-btn">Modifier</button>
+						<button type="button" value="supprimer" id="supprimer" class="btn btn-default navbar-btn">Supprimer</button>
 					</div>
 				</div>
 			</div>
