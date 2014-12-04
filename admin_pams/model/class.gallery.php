@@ -29,7 +29,6 @@ class Gallery extends Model {
         $folderExist = $this->connexion->query("SELECT * FROM galleries WHERE title = '$title'");
         $result = $folderExist->fetchAll(PDO::FETCH_ASSOC);
         //print_r($result);
-
         if (!empty($result))
         {  
             return true;

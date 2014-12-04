@@ -1,5 +1,5 @@
 <?php 
-session_start();
+//session_start();
 require_once("../model/class.gallery.php");
 
 $gallery = new Gallery();
@@ -10,17 +10,18 @@ function createGalleryFolder ($title){
 	$title=str_replace(" ","_",$title);
 	//On vérifie l'existence du répertoire $Num et on le crée si il n'existe pas 
 	if (is_dir("C:/xampp/htdocs/E-S-Photographie/gallery/$title")){ 
-		header('Location:galleriesController.php');
+		header('Location:PageController.php?page=2');
 	} 
 	if (!is_dir("C:/xampp/htdocs/E-S-Photographie/gallery/$title")){ 
 		mkdir ("C:/xampp/htdocs/E-S-Photographie/gallery/$title", "0777"); 
 	} 
 }
+
 if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
 	$_SESSION['dataLess']="infos manquantes";
-}else{
+}/*else{
 	unset($_SESSION['dataLess']);
-}
+}*/
 
 if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 		$title=$_POST['nameGallery'];
@@ -36,7 +37,7 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 		}
 
 		$_POST='';
-		unset($_SESSION['galleryExist']);
+		//unset($_SESSION['galleryExist']);
 }
 $tableData = $gallery->getData();
 
