@@ -14,11 +14,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index.php?page=1">Accueil<span class="sr-only">(current)</span></a></li>
-        <li><a href="index.php?page=7">Général<span class="sr-only">(current)</span></a></li>
-        <li><a href="index.php?page=6">Présentation<span class="sr-only">(current)</span></a></li>
-        <li><a href="index.php?page=2">Galeries<span class="sr-only">(current)</span></a></li>
-        <li><a href="index.php?page=3">Messages<span class="sr-only">(current)</span></a></li>
+        <li><a href="indexx.php?page=1">Accueil<span class="sr-only">(current)</span></a></li>
+        <li><a href="indexx.php?page=7">Général<span class="sr-only">(current)</span></a></li>
+        <li><a href="indexx.php?page=4">Photographies<span class="sr-only">(current)</span></a></li>
+        <li><a href="indexx.php?page=6">Présentation<span class="sr-only">(current)</span></a></li>
+        <li><a href="indexx.php?page=2">Galeries<span class="sr-only">(current)</span></a></li>
+        <li><a href="indexx.php?page=3">Messages<span class="sr-only">(current)</span></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
