@@ -35,8 +35,7 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
-
-								<?=// echo "<img  width='$width' height='$height' src='data:image/gif;base64,".base64_encode($image)."'>";?>
+								<?= $lool?>
 								<?= "<img src='../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
 							</div>
 							<div>

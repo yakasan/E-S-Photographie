@@ -9,16 +9,14 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 
 			$nouvellePhoto = new Photo();
 			$tmpname = $_FILES['photo']['tmp_name'];
+			$name = $_FILES['photo']['name'];
 			$extension = $_FILES['photo']['type'];
 			$extension = substr($extension, 6);
 			$title = $_POST['title'];
 			$desc = $_POST['desc'];
 			$chemin = $title.'.'.$extension;
-			$thumbnail = exif_thumbnail($_FILES['photo'], 150, 150, $extension);
-			header('Content-type: '.image_type_to_mime_type($extension));
-			echo "<img  width='$width' height='$height' src='data:image/gif;base64,".base64_encode($image)."'>";
 			$exif = exif_read_data($_FILES['photo']['tmp_name'], 0, true);
-			//$exif = serialize($exif);
+			$exif = serialize($exif);
 			//Ajout nouvelle photo Fichier correspondant
 			$nouvellePhoto->AddPhotoToFolder($tmpname, $title, $extension);
 			//Ajout nouvelle photo BBD
@@ -32,7 +30,23 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 	$Photo = new Photo();
 	$Photos = $Photo->DisplayPhoto();
 	$listePhoto = $Photos->fetchAll(PDO::FETCH_ASSOC);
-	$unserialized = unserialize($listePhoto[9]['exif']);
+	$unserialized = unserialize($listePhoto[1]['exif']);
+	$filename = $unserialized['FILE']['FileName'];
+	$extensionThumbnail = $unserialized['FILE']['MimeType'];
+	$extensionThumbnail = substr($extensionThumbnail, 6);
+	//print_r($filename);
+	//die;
+	//Affichage vignettes
+	$width = 150;
+	$height = 150;
+	$thumbnail = exif_thumbnail($filename, $width, $height, $extensionThumbnail);
+	////print_r($thumbnail);
+	header('Content-type: '.image_type_to_mime_type($extensionThumbnail));
+	$lool = "<img  width='$width' height='$height' src='data:image/gif;base64,".base64_encode($filename)."'>";
+
+	//print_r($listePhoto[2]['url']);
+	//die;
+	
 	//print_r($unserialized);
 	//$thumbnail = $unserialized['THUMBNAIL'];
 	//print_r($thumbnail);
