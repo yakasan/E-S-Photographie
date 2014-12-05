@@ -20,6 +20,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 			$titleNew=strtolower($titleNew);
 			$titleNew=str_replace(" ","_",$titleNew);
 			rename("../gallery/$title", "../gallery/$titleNew");
+			//unset($_SESSION['gallerieName']);
 			header('Location:indexx.php?page=2');
 	}
 
