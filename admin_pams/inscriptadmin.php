@@ -6,8 +6,9 @@ try {
     }
 
 $passvue='patrice';
+$login='login';
 $pass=md5($passvue);
-$connexion->query("INSERT INTO administrator (login, password) VALUES ('patrice','$pass')");
+$connexion->query("INSERT INTO administrator (login, password) VALUES ('$login','$pass')");
 
 
 var_dump($pass);
