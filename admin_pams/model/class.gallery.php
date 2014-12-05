@@ -30,7 +30,7 @@ class Gallery extends Model {
     }
 
     public function updateGallery($titleNew, $descriptionNew, $title){
-       $this->connexion->exec('UPDATE galleries SET title="$titleNew", description="$descriptionNew" WHERE title="$title"');
+       $this->connexion->exec("UPDATE galleries SET title='$titleNew', description='$descriptionNew' WHERE title='$title'");
     }
 
     public function knowFolderExist($title){ 

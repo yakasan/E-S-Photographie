@@ -9,11 +9,11 @@ function createGalleryFolder ($title){
 	$title=strtolower($title);
 	$title=str_replace(" ","_",$title);
 	//On vérifie l'existence du répertoire $Num et on le crée si il n'existe pas 
-	if (is_dir("../../gallery/$title")){ 
+	if (is_dir("../gallery/$title")){ 
 		header('Location:indexx.php?page=2');
 	} 
-	if (!is_dir("../../gallery/$title")){ 
-		mkdir ("../../gallery/$title", "0777"); 
+	elseif (!is_dir("../gallery/$title")){ 
+		mkdir ("../gallery/$title", "0777"); 
 	} 
 }
 

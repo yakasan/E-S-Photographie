@@ -16,7 +16,6 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 			$titleNew = $_POST['titleNew'];
 			$descriptionNew = $_POST['descriptionNew'];
 			$title = $_SESSION['gallerieName'];
-
 			$gallery->updateGallery($titleNew, $descriptionNew, $title);
 			$titleNew=strtolower($titleNew);
 			$titleNew=str_replace(" ","_",$titleNew);
