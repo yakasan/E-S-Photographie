@@ -106,8 +106,8 @@ $tableData = $gallery->getData();
 	    // j'ai cliqué sur « supprGallery »
 	    	$gallerieName=$_POST['gallerieName'];
 			destructFolder($gallerieName);
-			//$gallery->destructGallery($gallerieName);
-			echo"action suppr gallery";
+			$gallery->destructGallery($gallerieName);
+			header('Location:indexx.php?page=2');
 	}
 	include("view/galleries.tpl");
 }else{
