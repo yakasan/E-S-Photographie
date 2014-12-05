@@ -1,5 +1,7 @@
 <?php 
-include('../model/class.photo.php');
+require_once('index.php');
+include('model/class.photo.php');
+if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 
 	if(isset($_POST['addPhoto'])){
 		//if($_POST['title'] != ''){
@@ -31,5 +33,9 @@ include('../model/class.photo.php');
 
 
 
-include("../view/photos.tpl");
+include("view/photos.tpl");
+}else{
+	header("Location : ../index.html");
+	die;
+}
  ?>

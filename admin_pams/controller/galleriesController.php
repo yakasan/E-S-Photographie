@@ -1,8 +1,8 @@
 <?php 
-//session_start();
-require_once("../model/class.gallery.php");
+require_once('index.php');
+require_once("model/class.gallery.php");
 
-$gallery = new Gallery();
+
 //print_r($tableData);
 
 function createGalleryFolder ($title){
@@ -16,7 +16,8 @@ function createGalleryFolder ($title){
 		mkdir ("C:/xampp/htdocs/E-S-Photographie/gallery/$title", "0777"); 
 	} 
 }
-
+if (isset($_SESSION['login']) && $_SESSION['admin']==1){
+	$gallery = new Gallery();
 if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
 	$_SESSION['dataLess']="infos manquantes";
 }/*else{
@@ -60,5 +61,9 @@ if (isset($_GET['modifGallery'])&& isset($_GET['gallerieName'])) {
 	    //print_r($_GET['gallerieName']);
 		echo"action suppr gallery";
 }
-include("../view/galleries.tpl");
+include("view/galleries.tpl");
+}else{
+	header("Location : ../index.html");
+	die;
+}
 ?>
