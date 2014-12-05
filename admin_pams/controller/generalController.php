@@ -1,5 +1,5 @@
 <?php 
-require_once("index.php");
+require_once("indexx.php");
 require_once("model/class.general.php");
 
 if (isset($_SESSION['login']) && $_SESSION['admin']==1){
