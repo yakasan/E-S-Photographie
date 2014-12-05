@@ -1,7 +1,7 @@
-<?php include("../inc/header.inc.php") ?>
+<?php include("inc/header.inc.php") ?>
 
 <body>
-<?php include("../inc/nav.inc.php") ?>
+<?php include("inc/nav.inc.php") ?>
 
 
 	<div class="container">
@@ -33,7 +33,7 @@
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-5 divscrollbis">
-				<?php if (!empty($_POST)){ ?>
+				<?php if (!empty($recmessindiv)){ ?>
 				<table class="table">
 					<tr> 
 						<th>Affichage du message: </th>
@@ -41,7 +41,6 @@
 
 					<tr>
 						<td>
-							<form method="GET">
 							<span>Titre : </span></br>
 							<span><?= $recmessindiv[0]['title'] ; ?></span>
 						</td>
@@ -55,14 +54,13 @@
 					<tr>
 						<td>
 							<span>Texte : </span></br>
-							<span><?= $recmessindiv[0]['text']; ?></span>
+							<span><?= utf8_encode($recmessindiv[0]['text']); ?></span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type="submit" value="Répondre" class="btn btn-default">
-							<input type="submit" value="Supprimer" class="btn btn-default">
-							</form>
+							<?= "<a href='mailto:".$recmessindiv[0]['sender_email']."' class='btn btn-default navbar-btn'> Répondre </a>" ;?>
+							<?= '<a  name="Supprimer" href="?page=3&supprimer&id=' . $id . '" class="btn btn-default navbar-btn">Supprimer</a>'?>
 						</td>
 					</tr>	
 				</table>
@@ -71,4 +69,4 @@
 		</div>
 	</div>
 
-<?php include("../inc/footer.inc.php") ?>
+<?php include("inc/footer.inc.php") ?>

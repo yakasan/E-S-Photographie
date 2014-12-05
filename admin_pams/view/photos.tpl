@@ -1,13 +1,13 @@
-<?php include("../inc/header.inc.php") ?>
+<?php include("inc/header.inc.php") ?>
 
 <body>
-<?php include("../inc/nav.inc.php") ?>
+<?php include("inc/nav.inc.php") ?>
  
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<label for="addPhoto">Ajouter une photo à la galerie</label>
+				<label for="addPhoto">Ajouter une photo à la galerie (2Mo max)</label>
 				<form method="POST"  enctype="multipart/form-data">
 					<input type="file" name="photo">
 					<label for="title">Ajouter un titre</label>
@@ -35,7 +35,8 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
-								<?= "<img src='../../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
+								<?= $exif['THUMBNAIL']?>
+								<?= "<img src='../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
 							</div>
 							<div>
 								<?= $key ?>
@@ -49,7 +50,7 @@
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>
 							<input type="radio" name="cover">Cover</input><br>
-							<input type="button" value="Supprimer" onclick='DeletePhoto(".$listePhoto[$key][\'id\'].")><br>
+							<!--<input type="button" value="Supprimer" onclick=Delete(<?php//$listePhoto[$key]['id']?>)><br>-->
 						</div>
 						<?php }endforeach;?>
 						<input type="submit" value="Modifier"  name="modifPhoto">
@@ -65,4 +66,4 @@
 	<br>
 	<br>
 
-<?php include("../inc/footer.inc.php") ?>
+<?php include("inc/footer.inc.php") ?>

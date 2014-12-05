@@ -1,16 +1,28 @@
 <?php 
+require_once('index.php');
+require_once("model/class.message.php");
+if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 
-require_once("../model/class.message.php");
 $list = new Message;
-$recmess= $list->recupMessage();
-
 
 if (isset($_POST['idmess'])){
 	$id=$_POST['idmess'];
+	$list->seen($id);
 	$recmessindiv = $list->recupMessIndiv($id);
-}
-include("../view/messages.tpl");
+	$_SESSION['idmess']=$id;
 
+}
+
+if (isset($_GET['supprimer'])){
+	$idsup=$_SESSION['idmess'];
+	$list->supprMess($idsup);
+}
+$recmess= $list->recupMessage();
+include("view/messages.tpl");
+}else{
+	header("Location : ../index.html");
+	die;
+}
 
 
 

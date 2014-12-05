@@ -1,5 +1,5 @@
 <?php 
-require_once("../model/class.general.php");
+require_once("model/class.general.php");
 echo "stop";
 //print_r($_POST);
 $title=$_POST['title'];
@@ -23,5 +23,5 @@ else{
 	$m->editPages();
 }*/
 //print_r($_POST);
-include("../view/general.tpl");
+include("view/general.tpl");
  ?>
