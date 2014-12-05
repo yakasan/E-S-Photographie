@@ -9,11 +9,11 @@ function createGalleryFolder ($title){
 	$title=strtolower($title);
 	$title=str_replace(" ","_",$title);
 	//On vérifie l'existence du répertoire $Num et on le crée si il n'existe pas 
-	if (is_dir("../../gallery/$title")){ 
-		header('Location:PageController.php?page=2');
+	if (is_dir("../gallery/$title")){ 
+		header('Location:indexx.php?page=2');
 	} 
-	if (!is_dir("../../gallery/$title")){ 
-		mkdir ("../../gallery/$title", "0777"); 
+	elseif (!is_dir("../gallery/$title")){ 
+		mkdir ("../gallery/$title", "0777"); 
 	} 
 }
 
@@ -97,17 +97,19 @@ $tableData = $gallery->getData();
 	 	// j'ai cliqué sur « modifGallery »
 		 	print_r($_POST['modifGallery']);
 		 	print_r($_POST['gallerieName']);
-		 	echo"action modif gallery";
+		 	$_SESSION['gallerieName'] = $_POST['gallerieName'];
+		 	header('Location:indexx.php?page=8');
 
 	} elseif (isset($_POST['uploadPicture'])&& isset($_POST['gallerieName'])) {
 	    // j'ai cliqué sur « uploadPicture »
-	    	//print_r($_POST['uploadPicture']);
-	    	//print_r($_POST['gallerieName']);
-			echo"action upload picture";
+	    	$nameGallery = $_POST['gallerieName'];
+	    	$_SESSION['gallerieNameUpload'] = $gallery->getIdGallery($nameGallery);
+	    	header('Location:indexx.php?page=4');
 
 	} elseif (isset($_POST['supprGallery'])&& isset($_POST['gallerieName'])) {
 	    // j'ai cliqué sur « supprGallery »
 	    	$gallerieName=$_POST['gallerieName'];
+
 		    //print_r($_POST['supprGallery']); 
 		    //print_r($_POST['gallerieName']);
 			destructFolder($gallerieName);
@@ -115,7 +117,7 @@ $tableData = $gallery->getData();
 	}
 	include("view/galleries.tpl");
 }else{
-	header("Location : ../index.html");
+	header("Location: ../index.html");
 	die;
 }
 ?>

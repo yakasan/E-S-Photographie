@@ -1,3 +1,9 @@
 ressources et suggestion site E&S photographie :
 
 - lecture des métadonnées photo : exif_read_data --> http://php.net/manual/fr/function.exif-read-data.php
+
+- ajout background 
+	suppression du background existant
+	upload du nouveau dans un dossier spécifique
+	rename de l'image pour automatisation dans l'affichage du site
+	

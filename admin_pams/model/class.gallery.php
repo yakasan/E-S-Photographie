@@ -17,12 +17,20 @@ class Gallery extends Model {
     
     public function getData(){
         $tableData = $this->connexion->query("SELECT * FROM galleries");
-        //print_r($getData);
         return $tableData->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getIdGallery($nameGallery){
+        $tableData = $this->connexion->query("SELECT id FROM galleries WHERE title='$nameGallery'");
+        return $tableData->fetch(PDO::FETCH_ASSOC);
     }
     
     public function createGallery($title, $description){
        $this->connexion->exec("INSERT INTO galleries (title, description) VALUES ('$title', '$description')");
+    }
+
+    public function updateGallery($titleNew, $descriptionNew, $title){
+       $this->connexion->exec("UPDATE galleries SET title='$titleNew', description='$descriptionNew' WHERE title='$title'");
     }
 
     public function knowFolderExist($title){ 

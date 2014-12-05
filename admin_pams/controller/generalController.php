@@ -7,12 +7,12 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 	if (isset($_POST['title'])){
 		$title=$_POST['title'];
 		$content=$_POST['content'];
-		$background=$_POST['url_bg'];
+		$background=$_POST['background'];
 		$btnvalid=$_POST['btnvalid'];
-	
+		var_dump($_POST['background']);
 		$m = new General();
 		$m->getDataPages();
-		$m->makePages($title, $content);
+		$m->makePages($title, $content, $background);
 	}
 	include("view/general.tpl");
 }else{
