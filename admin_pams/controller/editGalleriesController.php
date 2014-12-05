@@ -19,13 +19,15 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 			$gallery->updateGallery($titleNew, $descriptionNew, $title);
 			$titleNew=strtolower($titleNew);
 			$titleNew=str_replace(" ","_",$titleNew);
+			print_r($titleNew);
+			$title=str_replace(" ","_",$title);
 			rename("../gallery/$title", "../gallery/$titleNew");
-			//unset($_SESSION['gallerieName']);
+			unset($_SESSION['gallerieName']);
 			header('Location:indexx.php?page=2');
 	}
 
 $tableData = $gallery->getData();
-print_r($_POST);
+//print_r($_POST);
 include("view/editGalleries.tpl");
 
 }else{
