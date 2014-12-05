@@ -36,7 +36,7 @@
 						<div>
 							<div>
 								<?= $lool?>
-								<?= "<img src='../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
+								
 							</div>
 							<div>
 								<?= $key ?>

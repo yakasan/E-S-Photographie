@@ -1,20 +1,5 @@
 <?php 
 
-/*
-require_once("../model/class.general.php");
-//phpinfo();
-
-$content=$_POST['content'];
-$image=$_POST['url_img']; 
-$background=$_POST['url_bg'];
-//$btnvalid=$_POST['btnvalid'];
-
-$m = new General();
-$m->getDataPages();
-$m->makePages();
-include("../view/general.tpl");
-*/
-
 require_once("indexx.php");
 require_once("model/class.general.php");
 require_once('model/class.photo.php');
@@ -45,8 +30,8 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 		//Ajout nouvelle photo Fichier correspondant
 		$nouvellePhoto->AddPhotoToFolder($tmpname, $name, $extension);
 }else{
-	header("Location : ../index.html");
-	die;
+	header('Location: index.html');
+	
 }
 
 ?>
