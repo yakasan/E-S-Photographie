@@ -17,7 +17,6 @@
 						<div class="divscroll">
 							<?php 
 								foreach ($tableData as $value) {
-									//$value['title']=str_replace("_"," ",$value['title']);
 									$titre = $value['title'];
 									echo "<a class='list-group-item'>";
 									echo '<input type="radio" value="'.$titre.'" name="gallerieName">   '.$titre;

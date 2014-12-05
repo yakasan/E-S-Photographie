@@ -2,16 +2,15 @@
 require_once('indexx.php');
 require_once("model/class.gallery.php");
 
-
-//print_r($tableData);
-
 function createGalleryFolder ($title){
 	$title=strtolower($title);
 	$title=str_replace(" ","_",$title);
-	//On vérifie l'existence du répertoire $Num et on le crée si il n'existe pas 
+
+	//On vérifie l'existence du répertoire  
 	if (is_dir("../gallery/$title")){ 
 		header('Location:indexx.php?page=2');
 	} 
+	//On le crée si il n'existe pas
 	elseif (!is_dir("../gallery/$title")){ 
 		mkdir ("../gallery/$title", "0777"); 
 	} 
@@ -85,8 +84,6 @@ $tableData = $gallery->getData();
 			//unset($_SESSION['galleryExist']);
 	}
 	$tableData = $gallery->getData();
-
-	//print_r($tableData);
 
 	if (isset($_POST['modifGallery'])&& isset($_POST['gallerieName'])) {
 	 	// j'ai cliqué sur « modifGallery »
