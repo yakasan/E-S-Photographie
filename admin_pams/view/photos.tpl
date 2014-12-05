@@ -35,6 +35,7 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
+								<?= $exif['THUMBNAIL']?>
 								<?= "<img src='../../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
 							</div>
 							<div>
