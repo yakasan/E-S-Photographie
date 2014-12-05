@@ -7,10 +7,28 @@ $list = new Message;
 
 if (isset($_POST['idmess'])){
 	$id=$_POST['idmess'];
-	$list->seen($id);
 	$recmessindiv = $list->recupMessIndiv($id);
+	$_SESSION['mess']=$recmessindiv;
 	$_SESSION['idmess']=$id;
+	if ($recmessindiv[0]['seen']==1){
+		$txt="Marquer comme 'Pas Vue'";
+	}else{
+		$txt="Marquer comme 'Vue'";
+	}
 
+}
+if (isset($_GET['seeing'])){
+	$id=$_SESSION['idmess'];
+	$recmessindiv=$_SESSION['mess'];	
+	if ($recmessindiv[0]['seen']==1){
+		$list->unseen($id);
+		$recmessindiv[0]['seen']=0;
+		$txt="Marquer comme 'Vue'";
+	}else{
+		$list->seen($id);
+		$recmessindiv[0]['seen']=1;
+		$txt="Marquer comme 'Pas Vue'";
+	}
 }
 
 if (isset($_GET['supprimer'])){

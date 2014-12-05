@@ -18,6 +18,9 @@ class Message extends Model{
 	function seen($id){
 		$result=$this->connexion->query("UPDATE messages SET seen='1' WHERE id='$id'");
 	}
+	function unseen($id){
+		$result=$this->connexion->query("UPDATE messages SET seen='0' WHERE id='$id'");
+	}
 	//passe un message en "a été supprimé"
 	function supprMess($id){
 		$result=$this->connexion->query("UPDATE messages SET deleted='1' WHERE id='$id'");
