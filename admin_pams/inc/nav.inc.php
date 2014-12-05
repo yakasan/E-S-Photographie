@@ -27,6 +27,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Compte <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><?= $_SESSION['login'] ?></li>
+            <li><a href="?page=1&modif">Modifier Mot de Passe</a></li>
             <li><a href="?page=1&deco">Déconnexion</a></li>
           </ul>
         </li>

@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-4">
 				<div class="input-group">
-					<form method="POST" action="indexx.php?page=7">
+					<form method="POST" action="indexx.php?page=7" enctype="multipart/form-data">
 						<div class="form-group">
 							<span class="input-group-addon">Edition général du site :</span>
 

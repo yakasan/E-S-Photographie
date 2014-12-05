@@ -26,6 +26,28 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 			header("Location: ./index.html");
 			
 		}
+		if (isset($_POST['ancien'],$_POST['nouveau'],$_POST['nouveau2'])){
+			$model= New Model();
+			$log=$_SESSION['login'];
+			$passancien=$_POST['ancien'];
+			$passnouveau=$_POST['nouveau'];
+			$passnouveau2=$_POST['nouveau2'];
+			if ($passnouveau!=$passnouveau2){
+				echo "Les nouveaux mots de passe ne correspondent pas entre eux.";
+				header("Location: indexx.php?page=1");
+			}
+			$passverif=verifpass($log, $passancien);
+			if ($passverif){
+				modifpass($log, $passnouveau);
+				echo "mot de passe changé avec succés.";
+
+			}else{
+				echo "Mot de passe incorrect";
+				header("Location: indexx.php?page=1");
+			}
+
+			
+		}
 	require_once("view/home.tpl");
 }else{
 	header("Location: ../index.html");

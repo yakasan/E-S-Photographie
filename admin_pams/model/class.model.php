@@ -1,5 +1,5 @@
 <?php
-
+//31
 class Model {
 
 
@@ -28,6 +28,23 @@ class Model {
 			return FALSE;
 		}
 
+	}
+	//verification du mot de passe
+	function verifpass($log,$pass){
+		$bdd=$this->connexion;
+		$resp=$bdd->query("SELECT password FROM administrator WHERE login='$log'");
+		$pass2=$resp->fetchAll(PDO::FETCH_ASSOC);
+		$password2=md5($pass2[0]['password']);
+		$password=md5($pass);
+		if ($password==$password2){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+	//modification du mot de passe
+	function modifpass($log, $pass){
+		$result=$this->connexion->query("UPDATE administrator SET password='$pass' WHERE login='$log'");
 	}
 
 }

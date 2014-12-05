@@ -1,0 +1,82 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   admin_pams/.htaccess
+#	modified:   admin_pams/controller/editGalleriesController.php
+#	modified:   admin_pams/controller/galleriesController.php
+#	modified:   admin_pams/controller/generalController.php
+#	modified:   admin_pams/controller/homeController.php
+#	modified:   admin_pams/controller/index.php
+#	modified:   admin_pams/controller/messagesController.php
+#	modified:   admin_pams/controller/photosController.php
+#	modified:   admin_pams/controller/photosModifController.php
+#	modified:   admin_pams/controller/presentController.php
+#	modified:   admin_pams/controller/testadd.php
+#	modified:   admin_pams/controller/testadd2.php
+#	modified:   admin_pams/css/bootstrap-theme.css
+#	modified:   admin_pams/css/bootstrap-theme.css.map
+#	modified:   admin_pams/css/bootstrap-theme.min.css
+#	modified:   admin_pams/css/bootstrap.css
+#	modified:   admin_pams/css/bootstrap.css.map
+#	modified:   admin_pams/css/bootstrap.min.css
+#	modified:   admin_pams/css/index.php
+#	modified:   admin_pams/css/style.css
+#	modified:   admin_pams/font/glyphicons-halflings-regular.eot
+#	modified:   admin_pams/font/glyphicons-halflings-regular.svg
+#	modified:   admin_pams/font/glyphicons-halflings-regular.ttf
+#	modified:   admin_pams/font/glyphicons-halflings-regular.woff
+#	modified:   admin_pams/font/index.php
+#	modified:   admin_pams/font/viewTest.php
+#	modified:   admin_pams/img/index.php
+#	modified:   admin_pams/img/viewTest.php
+#	modified:   admin_pams/inc/footer.inc.php
+#	modified:   admin_pams/inc/header.inc.php
+#	modified:   admin_pams/inc/index.php
+#	modified:   admin_pams/inc/nav.inc.php
+#	modified:   admin_pams/inc/nav.inc.php~
+#	modified:   admin_pams/index.html
+#	modified:   admin_pams/indexx.php
+#	modified:   admin_pams/inscriptadmin.php
+#	modified:   admin_pams/js/bootstrap.js
+#	modified:   admin_pams/js/bootstrap.min.js
+#	modified:   admin_pams/js/index.php
+#	modified:   admin_pams/js/jquery-2.1.1.min.js
+#	modified:   admin_pams/js/npm.js
+#	deleted:    admin_pams/model/class./index.php
+#	modified:   admin_pams/model/class.gallery.php
+#	modified:   admin_pams/model/class.general.php
+#	modified:   admin_pams/model/class.message.php
+#	modified:   admin_pams/model/class.model.php
+#	modified:   admin_pams/model/class.photo.php
+#	modified:   admin_pams/model/class/index.php
+#	modified:   admin_pams/model/index.php
+#	modified:   admin_pams/process/index.php
+#	modified:   admin_pams/process/viewTest.php
+#	modified:   admin_pams/view/editGalleries.tpl
+#	modified:   admin_pams/view/galleries.tpl
+#	modified:   admin_pams/view/general.tpl
+#	modified:   admin_pams/view/home.tpl
+#	modified:   admin_pams/view/index.php
+#	modified:   admin_pams/view/messages.tpl
+#	modified:   admin_pams/view/photos.tpl
+#	modified:   admin_pams/view/photosModif.tpl
+#	modified:   admin_pams/view/present.tpl
+#	modified:   bdd/es_photographie.sql
+#	modified:   controller/indexController.php
+#	modified:   css/styleTest.php
+#	modified:   font/viewTest.php
+#	deleted:    img/Screenshot - 05112014 - 17:15:46.png.png
+#	deleted:    img/Screenshot - 05112014 - 18:06:32.png.png
+#	modified:   inc/incTest.php
+#	modified:   index.html
+#	modified:   model/viewTest.php
+#	modified:   process/viewTest.php
+#	modified:   ressources et suggestion
+#	modified:   robot.txt
+#	modified:   view/viewTest.php
+#
+
