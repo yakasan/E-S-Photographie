@@ -1,7 +1,7 @@
-<?php include("../inc/header.inc.php") ?>
+<?php include("inc/header.inc.php") ?>
 
 <body>
-<?php include("../inc/nav.inc.php") ?>
+<?php include("inc/nav.inc.php") ?>
  
 
 	<div class="container">
@@ -35,8 +35,22 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
+<<<<<<< HEAD
 								<?= $thumbnail?>
 						
+=======
+								<?= $exif['THUMBNAIL']?>
+								<?= "<img src='../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
+							</div>
+							<div>
+								<?= $key ?>
+								<?= $listePhoto[$key]["id"] ?>
+								<?= $listePhoto[$key]["id_gallery"] ?>
+								<?= $listePhoto[$key]["title"] ?>
+								<?= $listePhoto[$key]["description"] ?>
+								<?= $listePhoto[$key]["exif"] ?>
+								<?= $listePhoto[$key]["url"] ?>
+>>>>>>> 731a01e9105561df49d58362d7b50c532e91bff4
 							</div>
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>
@@ -57,4 +71,4 @@
 	<br>
 	<br>
 
-<?php include("../inc/footer.inc.php") ?>
+<?php include("inc/footer.inc.php") ?>

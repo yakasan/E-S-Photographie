@@ -1,5 +1,5 @@
 <?php
-require_once("../model/class.model.php");
+require_once("class.model.php");
 
 class Message extends Model{
 	//recupère tout les messages

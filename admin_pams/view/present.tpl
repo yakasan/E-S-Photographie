@@ -1,7 +1,7 @@
-<?php include("../inc/header.inc.php") ?>
+<?php include("inc/header.inc.php") ?>
 
 <body>
-	<?php include("../inc/nav.inc.php") ?>
+	<?php include("inc/nav.inc.php") ?>
 <div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-4">
@@ -35,4 +35,4 @@
 		</div>
 	</div>
 
-<?php include("../inc/footer.inc.php") ?>
+<?php include("inc/footer.inc.php") ?>
