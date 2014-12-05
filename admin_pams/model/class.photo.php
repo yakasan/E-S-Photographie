@@ -13,6 +13,7 @@ class Photo extends Model {
 
 	function AddBackgroundToFolder($tmpname, $title, $extension){
 		move_uploaded_file($tmpname, "../img/".$title.".".$extension);
+
 	}
 
 	function DisplayPhoto($idGallery){
