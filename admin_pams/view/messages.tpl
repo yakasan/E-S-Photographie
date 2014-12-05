@@ -60,7 +60,7 @@
 					<tr>
 						<td>
 							<?= "<a href='mailto:".$recmessindiv[0]['sender_email']."' class='btn btn-default navbar-btn'> Répondre </a>" ;?>
-							<?= '<a  name="Supprimer" href="?supprimer&id=' . $id . '" class="btn btn-default navbar-btn">Supprimer</a>'?>
+							<?= '<a  name="Supprimer" href="?page=3&supprimer&id=' . $id . '" class="btn btn-default navbar-btn">Supprimer</a>'?>
 						</td>
 					</tr>	
 				</table>
