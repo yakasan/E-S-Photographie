@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-2">
-				<span> Bonjour "Captain chiotte", bienvenu sur l'interface ADMIN</span>
+				<span> Bonjour <?= $_SESSION['login']?>, bienvenu sur l'interface ADMIN</span>
 			</div>
 		</div>
 	</div>
