@@ -7,8 +7,13 @@ class Photo extends Model {
 		$this->connexion->exec("INSERT INTO photos(id_gallery, title, description, exif, url) VALUES ('$id_gallery', '$title', '$desc', '$exif', '$chemin')");
 	}
 
+<<<<<<< HEAD
+	function AddPhotoToFolder($tmpname,$name, $extension){
+		move_uploaded_file($tmpname, "../gallery/test/".$name.".".$extension);
+=======
 	function AddPhotoToFolder($tmpname, $title, $extension, $idGallery){
 		move_uploaded_file($tmpname, "../gallery/".$idGallery."/".$title.".".$extension);
+>>>>>>> 38493efd55cbed42d6f0b6e497f0e4f0fb8f68a5
 	}
 
 	function DisplayPhoto($idGallery){
