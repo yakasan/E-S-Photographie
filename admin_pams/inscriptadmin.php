@@ -5,9 +5,15 @@ try {
                 die ('erreur: '.$e->getmessage());
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 $passvue='patrice';
 $pass=md5($passvue);
 $connexion->query("INSERT INTO administrator (login, password) VALUES ('patrice','$pass')");
+=======
+$passvue='alexis';
+$pass=md5($passvue);
+$connexion->query("INSERT INTO administrator (login, password) VALUES ('alexis','$pass')");
+>>>>>>> e0482398484baf46ad9aa1bc19b74fef12ffc20c
 =======
 $passvue='memoria';
 $pass=md5($passvue);
