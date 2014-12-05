@@ -35,17 +35,8 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
-								<?= $exif['THUMBNAIL']?>
-								<?= "<img src='../../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
-							</div>
-							<div>
-								<?= $key ?>
-								<?= $listePhoto[$key]["id"] ?>
-								<?= $listePhoto[$key]["id_gallery"] ?>
-								<?= $listePhoto[$key]["title"] ?>
-								<?= $listePhoto[$key]["description"] ?>
-								<?= $listePhoto[$key]["exif"] ?>
-								<?= $listePhoto[$key]["url"] ?>
+								<?= $thumbnail?>
+						
 							</div>
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>
