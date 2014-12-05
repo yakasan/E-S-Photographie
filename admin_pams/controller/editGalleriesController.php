@@ -1,6 +1,6 @@
 <?php 
 require_once("model/class.gallery.php");
-require_once('index.php');
+require_once('indexx.php');
 
 
 //print_r($tableData);
