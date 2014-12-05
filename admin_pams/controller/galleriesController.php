@@ -16,7 +16,7 @@ function createGalleryFolder ($title){
 		mkdir ("../../gallery/$title", "0777"); 
 	} 
 }
-<<<<<<< HEAD
+
 
 function destructFolder ($nameGallery){
 	//$nameGallery = ucfirst($nameGallery);
@@ -38,57 +38,57 @@ function destructFolder ($nameGallery){
 	}
 }
 
-=======
+
 if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 	$gallery = new Gallery();
->>>>>>> af02facf2ffb7836ca940997568b31371ac2e447
-if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
-	$_SESSION['dataLess']="infos manquantes";
-}/*else{
-	unset($_SESSION['dataLess']);
-}*/
 
-if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
-		$title=$_POST['nameGallery'];
-		$description=$_POST['textGallery'];
+	if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
+		$_SESSION['dataLess']="infos manquantes";
+	}/*else{
+		unset($_SESSION['dataLess']);
+	}*/
 
-		$exist = $gallery->knowFolderExist($title);
+	if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
+			$title=$_POST['nameGallery'];
+			$description=$_POST['textGallery'];
 
-		if ($exist){
-			$_SESSION['galleryExist']="Galerie déjà existante";
-		}else{
-			$gallery->createGallery($title, $description);
-			createGalleryFolder($title);
-		}
+			$exist = $gallery->knowFolderExist($title);
 
-		$_POST='';
-		//unset($_SESSION['galleryExist']);
-}
-$tableData = $gallery->getData();
+			if ($exist){
+				$_SESSION['galleryExist']="Galerie déjà existante";
+			}else{
+				$gallery->createGallery($title, $description);
+				createGalleryFolder($title);
+			}
 
-//print_r($tableData);
+			$_POST='';
+			//unset($_SESSION['galleryExist']);
+	}
+	$tableData = $gallery->getData();
 
-if (isset($_POST['modifGallery'])&& isset($_POST['gallerieName'])) {
- 	// j'ai cliqué sur « modifGallery »
-	 	print_r($_POST['modifGallery']);
-	 	print_r($_POST['gallerieName']);
-	 	echo"action modif gallery";
+	//print_r($tableData);
 
-} elseif (isset($_POST['uploadPicture'])&& isset($_POST['gallerieName'])) {
-    // j'ai cliqué sur « uploadPicture »
-    	//print_r($_POST['uploadPicture']);
-    	//print_r($_POST['gallerieName']);
-		echo"action upload picture";
+	if (isset($_POST['modifGallery'])&& isset($_POST['gallerieName'])) {
+	 	// j'ai cliqué sur « modifGallery »
+		 	print_r($_POST['modifGallery']);
+		 	print_r($_POST['gallerieName']);
+		 	echo"action modif gallery";
 
-} elseif (isset($_POST['supprGallery'])&& isset($_POST['gallerieName'])) {
-    // j'ai cliqué sur « supprGallery »
-    	$gallerieName=$_POST['gallerieName'];
-	    //print_r($_POST['supprGallery']); 
-	    //print_r($_POST['gallerieName']);
-		destructFolder($gallerieName);
-		echo"action suppr gallery";
-}
-include("view/galleries.tpl");
+	} elseif (isset($_POST['uploadPicture'])&& isset($_POST['gallerieName'])) {
+	    // j'ai cliqué sur « uploadPicture »
+	    	//print_r($_POST['uploadPicture']);
+	    	//print_r($_POST['gallerieName']);
+			echo"action upload picture";
+
+	} elseif (isset($_POST['supprGallery'])&& isset($_POST['gallerieName'])) {
+	    // j'ai cliqué sur « supprGallery »
+	    	$gallerieName=$_POST['gallerieName'];
+		    //print_r($_POST['supprGallery']); 
+		    //print_r($_POST['gallerieName']);
+			destructFolder($gallerieName);
+			echo"action suppr gallery";
+	}
+	include("view/galleries.tpl");
 }else{
 	header("Location : ../index.html");
 	die;
