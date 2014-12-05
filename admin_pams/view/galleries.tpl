@@ -18,7 +18,6 @@
 						<div class="divscroll">
 							<?php 
 								foreach ($tableData as $value) {
-									//$value['title']=str_replace("_"," ",$value['title']);
 									$titre = $value['title'];
 									echo "<a class='list-group-item'>";
 									echo '<input type="radio" value="'.$titre.'" name="gallerieName">   '.$titre;
@@ -42,7 +41,8 @@
 						<input type="text" name="nameGallery" id="nameGallery" class="form-control" placeholder="Nom de la galerie">
 						
 							<label for="textGallery">Description:</label>
-							<textarea class="form-control" rows="5" name="textGallery" id="textGallery"></textarea>
+							<textarea class="form-control" rows="5" name="textGallery" id="textGallery" placeholder="Description de la galerie">
+							</textarea>
 						
 						<input type="submit" value="Créer" class="btn btn-default">
 					</form>
