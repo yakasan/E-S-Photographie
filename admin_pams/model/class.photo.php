@@ -11,8 +11,8 @@ class Photo extends Model {
 		move_uploaded_file($tmpname, "C:/xampp/htdocs/E-S-Photographie/gallery/test/".$title.".".$extension);
 	}
 
-	function DisplayPhoto(){
-		$query = $this->connexion->prepare("SELECT * FROM photos");
+	function DisplayPhoto($idGallery){
+		$query = $this->connexion->prepare("SELECT * FROM photos WHERE id_gallery =".$idGallery."");
 		$query->execute();
 		return $query;
 	}
