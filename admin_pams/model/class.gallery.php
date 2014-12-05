@@ -25,6 +25,10 @@ class Gallery extends Model {
        $this->connexion->exec("INSERT INTO galleries (title, description) VALUES ('$title', '$description')");
     }
 
+    public function updateGallery($titleNew, $descriptionNew, $title){
+       $this->connexion->exec('UPDATE galleries SET title="$titleNew", description="$descriptionNew" WHERE title="$title"');
+    }
+
     public function knowFolderExist($title){ 
         $folderExist = $this->connexion->query("SELECT * FROM galleries WHERE title = '$title'");
         $result = $folderExist->fetchAll(PDO::FETCH_ASSOC);

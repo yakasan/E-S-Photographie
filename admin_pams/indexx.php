@@ -31,6 +31,14 @@ if (isset($_GET['page'])){
 		include('controller/generalController.php');
 		die;
 	}
+	if ($_GET['page']==8){
+		include('controller/editGalleriesController.php');
+		die;
+	}
+	if ($_GET['page']==9){
+		include('controller/uploadGalleriesController.php');
+		die;
+	}
 
 }
 ?>
