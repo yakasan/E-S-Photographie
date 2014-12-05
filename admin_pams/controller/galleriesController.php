@@ -18,23 +18,21 @@ function createGalleryFolder ($title){
 }
 
 function destructFolder ($nameGallery){
-	//$nameGallery = ucfirst($nameGallery);
+
 	$nameGallery = strtolower($nameGallery);
 	$nameGallery = str_replace(" ","_",$nameGallery);
 	$nameGallery = str_replace(".", "", $nameGallery);
 	print_r($nameGallery);
-	//$selectGallery = opendir("../../gallery/$nameGallery");
-	//$selectGallery = readdir($selectGallery);
-	if ($selectGallery = opendir("../../gallery/$nameGallery")) {
+
+	$selectGallery = opendir("../gallery/$nameGallery");
     while (false !== ($nameFile = readdir($selectGallery))) {
         if ($nameFile != "." && $nameFile != "..") {
             echo "$nameFile a été supprimé";
-            unlink("../../gallery/$nameGallery/$nameFile");
+            unlink("../gallery/$nameGallery/$nameFile");
         }
     }
     echo"la galerie a été supprimée";
-	rmdir($selectGallery);
-	}
+	rmdir("../gallery/$nameGallery");
 }
 
 
@@ -62,16 +60,13 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 		}
 
 		$_POST='';
-		//unset($_SESSION['galleryExist']);
 }
 $tableData = $gallery->getData();
 
 
 	if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
 		$_SESSION['dataLess']="infos manquantes";
-	}/*else{
-		unset($_SESSION['dataLess']);
-	}*/
+	}
 
 	if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 			$title=$_POST['nameGallery'];
@@ -103,16 +98,15 @@ $tableData = $gallery->getData();
 	} elseif (isset($_POST['uploadPicture'])&& isset($_POST['gallerieName'])) {
 	    // j'ai cliqué sur « uploadPicture »
 	    	$nameGallery = $_POST['gallerieName'];
-	    	$_SESSION['gallerieNameUpload'] = $gallery->getIdGallery($nameGallery);
+	    	$_SESSION['gallerieNameUpload'] = $_POST['gallerieName'];
+	    	$_SESSION['gallerieIdUpload'] = $gallery->getIdGallery($nameGallery);
 	    	header('Location:indexx.php?page=4');
 
 	} elseif (isset($_POST['supprGallery'])&& isset($_POST['gallerieName'])) {
 	    // j'ai cliqué sur « supprGallery »
 	    	$gallerieName=$_POST['gallerieName'];
-
-		    //print_r($_POST['supprGallery']); 
-		    //print_r($_POST['gallerieName']);
 			destructFolder($gallerieName);
+			//$gallery->destructGallery($gallerieName);
 			echo"action suppr gallery";
 	}
 	include("view/galleries.tpl");

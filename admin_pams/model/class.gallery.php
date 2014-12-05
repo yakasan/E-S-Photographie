@@ -33,6 +33,10 @@ class Gallery extends Model {
        $this->connexion->exec("UPDATE galleries SET title='$titleNew', description='$descriptionNew' WHERE title='$title'");
     }
 
+    public function destructGallery($title){
+       $this->connexion->exec("DELETE from galleries WHERE title='$title'");
+    }
+
     public function knowFolderExist($title){ 
         $folderExist = $this->connexion->query("SELECT * FROM galleries WHERE title = '$title'");
         $result = $folderExist->fetchAll(PDO::FETCH_ASSOC);
