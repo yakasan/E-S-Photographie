@@ -1,14 +1,18 @@
-<?php include("../inc/header.inc.php") ?>
+<?php include("inc/header.inc.php") ?>
 
 <body>
-<?php include("../inc/nav.inc.php") ?>
+<?php include("inc/nav.inc.php") ?>
 
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
+<<<<<<< HEAD
 					<form method="POST" action="PageController.php?page=2.php">
+=======
+					<form method="GET" action="index.php?page=2.php">
+>>>>>>> af02facf2ffb7836ca940997568b31371ac2e447
 						<a href="#" class="list-group-item disabled">Liste des galeries</a>
 						<div class="divscroll">
 							<?php 
@@ -43,7 +47,7 @@
 					</form>
 				</div>	-->
 				
-					<form method="POST" name="addGallery" id="addGallery" action="../controller/galleriesController.php">
+					<form method="POST" name="addGallery" id="addGallery" action="controller/galleriesController.php">
 						<span class="input-group-addon">Création d'une galerie :</span>
 						<input type="text" name="nameGallery" id="nameGallery" class="form-control" placeholder="Nom de la galerie">
 						
@@ -57,4 +61,4 @@
 		</div>
 	</div>
 
-<?php include("../inc/footer.inc.php") ?>
+<?php include("inc/footer.inc.php") ?>
