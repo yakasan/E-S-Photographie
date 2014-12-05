@@ -35,11 +35,8 @@
 						<?php foreach($listePhoto as $key => $value):{?>
 						<div>
 							<div>
-<<<<<<< HEAD
-								<?= $thumbnail?>
-						
-=======
-								<?= $exif['THUMBNAIL']?>
+
+								<?=// echo "<img  width='$width' height='$height' src='data:image/gif;base64,".base64_encode($image)."'>";?>
 								<?= "<img src='../gallery/test/".$listePhoto[$key]['url']."'>"; ?>
 							</div>
 							<div>
@@ -50,7 +47,7 @@
 								<?= $listePhoto[$key]["description"] ?>
 								<?= $listePhoto[$key]["exif"] ?>
 								<?= $listePhoto[$key]["url"] ?>
->>>>>>> 731a01e9105561df49d58362d7b50c532e91bff4
+
 							</div>
 							thumbnail<br>
 							<input type="checkbox">Modifier</input>

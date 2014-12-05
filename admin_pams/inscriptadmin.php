@@ -4,9 +4,9 @@ try {
             }catch(PDOException $e){
                 die ('erreur: '.$e->getmessage());
             }
-$passvue='unix';
+$passvue='patrice';
 $pass=md5($passvue);
-$connexion->query("INSERT INTO administrator (login, password) VALUES ('Gromy','$pass')");
+$connexion->query("INSERT INTO administrator (login, password) VALUES ('patrice','$pass')");
 
 var_dump($pass);
 ?>
