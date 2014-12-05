@@ -36,7 +36,7 @@
 			<div class="col-md-5">
 				
 				
-					<form method="POST" name="addGallery" id="addGallery" action="controller/galleriesController.php">
+					<form method="POST" name="addGallery" id="addGallery" action="indexx.php?page=2.php">
 						<span class="input-group-addon">Création d'une galerie :</span>
 						<input type="text" name="nameGallery" id="nameGallery" class="form-control" placeholder="Nom de la galerie">
 						

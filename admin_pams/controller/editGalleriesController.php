@@ -13,19 +13,20 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 	}
 
 	if(!empty($_POST['titleNew']) && !empty($_POST['descriptionNew'])){
-			$titleNew=$_POST['titleNew'];
-			$description=$_POST['descriptionNew'];
-
+			$titleNew = $_POST['titleNew'];
+			$descriptionNew = $_POST['descriptionNew'];
+			$title = $_SESSION['gallerieName'];
 			$gallery->updateGallery($titleNew, $descriptionNew, $title);
 			$titleNew=strtolower($titleNew);
 			$titleNew=str_replace(" ","_",$titleNew);
 			rename("../gallery/$title", "../gallery/$titleNew");
+			header('Location:indexx.php?page=2');
 	}
-
 
 $tableData = $gallery->getData();
 print_r($_POST);
 include("view/editGalleries.tpl");
+
 }else{
 	header("Location: ../index.html");
 	die;
