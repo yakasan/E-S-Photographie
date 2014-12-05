@@ -30,19 +30,23 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 	$Photo = new Photo();
 	$Photos = $Photo->DisplayPhoto();
 	$listePhoto = $Photos->fetchAll(PDO::FETCH_ASSOC);
+	//print_r($listePhoto);
 	$unserialized = unserialize($listePhoto[1]['exif']);
-	$filename = $unserialized['FILE']['FileName'];
-	$extensionThumbnail = $unserialized['FILE']['MimeType'];
-	$extensionThumbnail = substr($extensionThumbnail, 6);
+	//$filename = $unserialized['FILE']['FileName'];
+	$filename = "../gallery/test/Sylvain.jpeg";
+	print_r($filename);
 	//print_r($filename);
-	//die;
+	$extensionThumbnail = $unserialized['FILE']['MimeType'];
+	print_r($extensionThumbnail);
+	//$extensionThumbnail = ".".substr($extensionThumbnail, 6);
 	//Affichage vignettes
 	$width = 150;
 	$height = 150;
 	$thumbnail = exif_thumbnail($filename, $width, $height, $extensionThumbnail);
-	////print_r($thumbnail);
-	header('Content-type: '.image_type_to_mime_type($extensionThumbnail));
-	$lool = "<img  width='$width' height='$height' src='data:image/gif;base64,".base64_encode($filename)."'>";
+	print_r($thumbnail);
+	//////print_r($thumbnail);
+	//header('Content-type: '.image_type_to_mime_type($extensionThumbnail));
+	$lool = "<img  width='$width' height='$height' src='data:".$extensionThumbnail.";base64,".base64_encode($thumbnail)."'>";
 
 	//print_r($listePhoto[2]['url']);
 	//die;
