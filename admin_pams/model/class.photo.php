@@ -8,7 +8,7 @@ class Photo extends Model {
 	}
 
 	function AddPhotoToFolder($tmpname,$title, $extension){
-		move_uploaded_file($tmpname, "C:/xampp/htdocs/E-S-Photographie/gallery/test/".$title.".".$extension);
+		move_uploaded_file($tmpname, "../gallery/test/".$title.".".$extension);
 	}
 
 	function DisplayPhoto(){
