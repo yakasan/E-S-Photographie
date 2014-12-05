@@ -62,6 +62,8 @@ include('model/class.photo.php');
 		//Pour chaque photo se trouvant dans $listePhoto...
 		foreach($listePhoto as $key => $value){
 
+			$id = $listePhoto[$key]['id'];
+
 			//Déserialization des exifs
 			$unserialized = unserialize($listePhoto[$key]['exif']);
 	
@@ -86,9 +88,21 @@ include('model/class.photo.php');
 			
 			//On met la balise d'affichage de la vignette dans le tableau associatif, sinon on affichera que la dernière vignette trouvée
 			$listePhoto[$key]['$lool'] = "<img  width='$width' height='$height' src='data:".$extensionThumbnail.";base64,".base64_encode($thumbnail)."'>";
+
 		}
 
-		print_r($_POST);
+		//Si le bouton submit est cliqué et qu'au moins une checkbox est coché...
+		if(isset($_POST['checkbox']) && !empty($_POST['checkbox'])){
+			//Récupération de l'ID des photos cochés
+			$checkbox = $_POST['checkbox'];
+			//Inclusion de la page photosModif.tpl
+			include("view/photosModif.tpl");
+			//Redirection vers la page + transmission de la variable $checkbox
+			http_redirect("Location: view/photosModif.tpl", $checkbox);
+			//MEURT!!!
+			die;
+		}
+		
 	
 	include("view/photos.tpl");
 	}else{

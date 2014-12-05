@@ -7,6 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
+				<!--Formulaire d'ajout de photo-->
 				<label for="addPhoto">Ajouter une photo à la galerie <?= $nameGallery?> (2Mo max)</label>
 				<form method="POST"  enctype="multipart/form-data">
 					<input type="file" name="photo">
@@ -20,6 +21,22 @@
 		</div>
 	</div>
 	
+	A AJOUTER:
+			- FONCTION MODIFICATION PHOTO:
+				- MODIFIER TITRE AVEC STR_REPLACE;
+				- MODIFIER DESCRIPTION AVEC STR_REPLACE;
+				- MODIFIER PHOTO (UPLOAD UNE A LA PLACE DE L'ACTUELLE) + RECUPERATION EXIFS;
+				- SAUVEGARDE EN BDD ET DANS DOSSIER CORRESPONDANT;
+			- FONCTION AJOUT COVER (SAUF SI C'EST ALEXIS QUI SANS OCCUPE):
+				- SAUVEGARDER UNE PHOTO AVEC TITRE PAR DEFAUT (EX: COVER.JPEG);
+				- AJOUTER UN CHAMP BOOLEEN COVER DANS LA BDD;
+			- FONCTION SUPPRESSION DE PHOTO:
+				- SUPPRESSION DE LA BDD;
+				- SUPPRESSION DU DOSSIER CORRESPONDANT;
+
+			A SUPPRIMER ?
+			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
+
 	<br>
 	<br>
 	<br>
@@ -29,33 +46,38 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
+				<!--Si $listePhoto n'est pas vide, on affiche ce qui suit, sinon, on affiche un texte-->
 				<?php if(!empty($listePhoto)):{?>
 					<label for="modifPhoto">Modifier une photo de la galerie</label>
-					<form method="POST" name="modifPhoto">
+					<form method="POST">
 						<div>
+							<!--Pour chaque photo présente dans le tableau, on affiche la vignette qui va bien-->
 							<?php foreach($listePhoto as $key => $value):{?>
 							<div>
-								<div id="<?=$listePhoto[$key]["id"]?>">
+								<div id="<?=$listePhoto[$key]['id']?>">
 									<?= $listePhoto[$key]['$lool']?>
 								</div>
-								<!--<div>
-									<?php//$key ?>
-									<?php//$listePhoto[$key]["id"] ?>
-									<?php//$listePhoto[$key]["id_gallery"] ?>
-									<?php//$listePhoto[$key]["title"] ?>
-									<?php//$listePhoto[$key]["description"] ?>
-									<?php//$listePhoto[$key]["exif"] ?>
-									<?php//$listePhoto[$key]["url"] ?>
+								<!--<div>			ça c'est en commentaire parce que je sais pas encore si ça va servir ou pas
+								                                                    /¯/¯/¯/¯/¯/¯\
+									<?php//$key ?>                                 //¯¯¯¯¯¯¯¯¯¯¯\\
+									<?php//$listePhoto[$key]["id"] ?>			   | /-\	 /-\ |						
+									<?php//$listePhoto[$key]["id_gallery"] ?>	 |¯|| o |===| o ||¯|					
+									<?php//$listePhoto[$key]["title"] ?>		 | |¯¯¯¯¯| |¯¯¯¯¯| |
+									<?php//$listePhoto[$key]["description"] ?>	  ¯|	/o¯o\	 |^						
+									<?php//$listePhoto[$key]["exif"] ?>				\\_________//		
+									<?php//$listePhoto[$key]["url"] ?>				 \_________/
 								</div>-->
-								<input type="checkbox">Modifier</input>
+								<input type="checkbox" name="checkbox[]" value="<?=$listePhoto[$key]['id']?>">Modifier</input>
 								<input type="radio" name="cover">Cover</input>
+								<!--j'voulais testé un truc, mais ça va surement jarter-->
 								<!--<input type="button" value="Supprimer" onclick=Delete(<?php//$listePhoto[$key]['id']?>)><br>-->
 							</div>
 							<?php }endforeach;?>
-							<input type="submit" value="Modifier">
+							<input type="submit" value="Modifier" name="modifPhoto">
 						</div>
 					</form>
 				<?php }else:{
+					//Le fameux texte qui s'affiche si $listePhoto est vide
 					echo "Il n'y a pas encore de photos dans cette galerie !";
 				}endif;?>
 			</div>
