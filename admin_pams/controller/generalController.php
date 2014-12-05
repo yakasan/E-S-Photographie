@@ -19,19 +19,19 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 
 	if(isset($_POST['background'])){
 		$nouvellePhoto = new Photo();
+		var_dump($_FILES['tmp_name']);
 		$tmpname = $_FILES['photo']['tmp_name'];
 		$extension = $_FILES['photo']['type'];
 		$extension = substr($extension, 6);
 		$name = $_POST['background'];
 		$chemin = $name.'.'.$extension;
-		$exif = exif_read_data($_FILES['photo']['tmp_name'], 0, true);
 		//print_r($exif);
 		//die;
 		//Ajout nouvelle photo Fichier correspondant
 		$nouvellePhoto->AddPhotoToFolder($tmpname, $name, $extension);
+	}
 }else{
 	header('Location: index.html');
-	
 }
 
 ?>
