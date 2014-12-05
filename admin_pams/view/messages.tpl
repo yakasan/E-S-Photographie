@@ -10,7 +10,7 @@
 				<div class="list-group">
 					
 					<a href="#" class="list-group-item disabled">Liste des messages</a>
-					<form method='POST'>
+					<form method='POST' action='indexx.php?page=3'>
 					<div class="divscroll">
 					<?php if (isset($recmess)){
 						foreach ($recmess as $key => $value) {
@@ -32,13 +32,12 @@
 			</div>
 			<div class="col-md-2">
 			</div>
-			<div class="col-md-5 divscrollbis">
+			<div class="col-md-5">
 				<?php if (!empty($recmessindiv)){ ?>
 				<table class="table">
 					<tr> 
 						<th>Affichage du message: </th>
 					</tr>
-
 					<tr>
 						<td>
 							<span>Titre : </span></br>
@@ -53,6 +52,7 @@
 					</tr>
 					<tr>
 						<td>
+							<div class="divscrollbis">
 							<span>Texte : </span></br>
 							<span><?= utf8_encode($recmessindiv[0]['text']); ?></span>
 						</td>
@@ -60,7 +60,11 @@
 					<tr>
 						<td>
 							<?= "<a href='mailto:".$recmessindiv[0]['sender_email']."' class='btn btn-default navbar-btn'> Répondre </a>" ;?>
-							<?= '<a  name="Supprimer" href="?page=3&supprimer&id=' . $id . '" class="btn btn-default navbar-btn">Supprimer</a>'?>
+							<?= '<a  name="Supprimer" href="indexx.php?page=3&supprimer&id=' . $recmessindiv[0]['id'] . '" class="btn btn-default navbar-btn">Supprimer</a>'?>
+							<?= '<form action="indexx.php?page=3&seeing" method="post">
+<input type="hidden" name="idmess" value="'.$recmessindiv[0]['id'].'" />
+<input type="submit" class="btn btn-default navbar-btn" value="'.$txt.'" />
+</form> '?>
 						</td>
 					</tr>	
 				</table>
