@@ -1,4 +1,3 @@
-
 <?php include("inc/header.inc.php") ?>
 
 <body>
@@ -8,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<label for="addPhoto">Ajouter une photo à la galerie (2Mo max)</label>
+				<label for="addPhoto">Ajouter une photo à la galerie <?= $nameGallery?> (2Mo max)</label>
 				<form method="POST"  enctype="multipart/form-data">
 					<input type="file" name="photo">
 					<label for="title">Ajouter un titre</label>
@@ -37,7 +36,7 @@
 						<div>
 							<div>
 								<?= $lool?>
-								
+								<?= "<img src='../gallery/".$nameGallery."/".$listePhoto[$key]['url']."'>"; ?>
 							</div>
 							<div>
 								<?= $key ?>

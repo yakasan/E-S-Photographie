@@ -39,7 +39,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 			$passverif=verifpass($log, $passancien);
 			if ($passverif){
 				modifpass($log, $passnouveau);
-				echo "mot de passe changé avec succés."
+				echo "mot de passe changé avec succés.";
 
 			}else{
 				echo "Mot de passe incorrect";
