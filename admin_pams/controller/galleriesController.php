@@ -16,7 +16,6 @@ function createGalleryFolder ($title){
 		mkdir ("../../gallery/$title", "0777"); 
 	} 
 }
-<<<<<<< HEAD
 
 function destructFolder ($nameGallery){
 	//$nameGallery = ucfirst($nameGallery);
@@ -38,10 +37,10 @@ function destructFolder ($nameGallery){
 	}
 }
 
-=======
+
 if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 	$gallery = new Gallery();
->>>>>>> af02facf2ffb7836ca940997568b31371ac2e447
+
 if(empty($_POST['nameGallery']) && empty($_POST['textGallery'])){
 	$_SESSION['dataLess']="infos manquantes";
 }/*else{

@@ -8,11 +8,11 @@
 		<div class="row">
 			<div class="col-md-5">
 				<div class="list-group">
-<<<<<<< HEAD
+
 					<form method="POST" action="PageController.php?page=2.php">
-=======
+
 					<form method="GET" action="index.php?page=2.php">
->>>>>>> af02facf2ffb7836ca940997568b31371ac2e447
+
 						<a href="#" class="list-group-item disabled">Liste des galeries</a>
 						<div class="divscroll">
 							<?php 
