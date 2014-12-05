@@ -20,7 +20,7 @@ if (isset($_GET['supprimer'])){
 $recmess= $list->recupMessage();
 include("view/messages.tpl");
 }else{
-	header("Location : ../index.html");
+	header("Location: ../index.html");
 	die;
 }
 

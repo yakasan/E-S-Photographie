@@ -43,7 +43,7 @@ if(!empty($_POST['nameGallery']) && !empty($_POST['textGallery'])){
 $tableData = $gallery->getData();
 include("view/editGalleries.tpl");
 }else{
-	header("Location : ../index.html");
+	header("Location: ../index.html");
 	die;
 }
 ?>

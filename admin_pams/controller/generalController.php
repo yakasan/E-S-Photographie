@@ -14,7 +14,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 include("view/general.tpl");
 
 }else{
-	header("Location : ../index.html");
+	header('Location: index.html');
 	die;
 }
 

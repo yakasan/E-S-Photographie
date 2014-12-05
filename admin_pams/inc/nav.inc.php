@@ -26,8 +26,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Compte <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li>Nom de l'utilisateur</li>
-            <li><a href="#">Déconnexion</a></li>
+            <li><?= $_SESSION['login'] ?></li>
+            <li><a href="?page=1&deco">Déconnexion</a></li>
           </ul>
         </li>
       </ul>

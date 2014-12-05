@@ -14,16 +14,21 @@ if (isset($_POST['login'],$_POST['password'])){
 	}else{
 
 		echo "Mot de Passe/Utilisateur incorrect.";
-		header("Location : index.html");
-		die;
+		header("Location: index.html");
 	}
 }
 	
 
 if (isset($_SESSION['login']) && $_SESSION['admin']==1){
+		if (isset($_GET['deco'])){
+			$_SESSION = array();
+			session_destroy();
+			header("Location: ./index.html");
+			
+		}
 	require_once("view/home.tpl");
 }else{
-	header("Location : ../index.html");
+	header("Location: ../index.html");
 	die;
 }
 ?>
