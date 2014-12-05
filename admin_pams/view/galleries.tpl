@@ -9,9 +9,9 @@
 			<div class="col-md-5">
 				<div class="list-group">
 
-					<form method="POST" action="PageController.php?page=2.php">
 
-					<form method="GET" action="index.php?page=2.php">
+
+					<form method="POST" action="indexx.php?page=2.php">
 
 						<a href="#" class="list-group-item disabled">Liste des galeries</a>
 						<div class="divscroll">
@@ -35,17 +35,6 @@
 			</div>
 			<div class="col-md-5">
 				
-				<!--<div class="input-group">
-					<form method="GET">
-						<span class="input-group-addon">Création d'une galerie :</span>
-						<input type="text" class="form-control" placeholder="Nom de la galerie">
-						<div class="form-group">
-							<label for="comment">Description:</label>
-							<textarea class="form-control" rows="5" id="comment"></textarea>
-						</div>
-						<input type="submit" value="Créer" class="btn btn-default">
-					</form>
-				</div>	-->
 				
 					<form method="POST" name="addGallery" id="addGallery" action="controller/galleriesController.php">
 						<span class="input-group-addon">Création d'une galerie :</span>
