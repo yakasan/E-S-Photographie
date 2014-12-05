@@ -2,6 +2,8 @@
 require_once('indexx.php');
 include('model/class.photo.php');
 
+	print_r($_SESSION);
+
 	//Récupération de l'ID de la galerie actuelle
 	$idGallery = $_SESSION['gallerieNameUpload']['id'];
 
