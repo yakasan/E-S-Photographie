@@ -7,13 +7,6 @@ class Gallery extends Model {
     private $title;
     private $description;
     private $img_present;
-
-    /*function __construct($id, $title, $description, $img_present) {
-        $this->id = $id;
-        $this->title = $title;
-        $this->description = $description;
-        $this->img_present = $img_present;
-    }*/
     
     public function getData(){
         $tableData = $this->connexion->query("SELECT * FROM galleries");
@@ -33,6 +26,10 @@ class Gallery extends Model {
        $this->connexion->exec("UPDATE galleries SET title='$titleNew', description='$descriptionNew' WHERE title='$title'");
     }
 
+    public function destructGallery($title){
+       $this->connexion->exec("DELETE from galleries WHERE title='$title'");
+    }
+
     public function knowFolderExist($title){ 
         $folderExist = $this->connexion->query("SELECT * FROM galleries WHERE title = '$title'");
         $result = $folderExist->fetchAll(PDO::FETCH_ASSOC);
@@ -44,12 +41,6 @@ class Gallery extends Model {
             return false;
         }
     }
-    /*public function createGalleryFolder($title){
-        //$this->mkdir(path,mode,recursive,context);
-        $title=str_replace(" ","_",$title);
-        
-    }*/
 }
 
-
- ?>
+?>
