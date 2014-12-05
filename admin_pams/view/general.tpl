@@ -23,7 +23,7 @@
 							</div>
 							<div class="form-group">
 								<label for="url_bg">background :</label>
-								<input type="file" name="url_bg">
+								<input type="file" name="background">
 							</div>
 
 							<input type="submit" name="btnvalid" class="btn btn-default" value="Valider"/>

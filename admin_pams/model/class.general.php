@@ -7,7 +7,6 @@ class General extends Model {
     public $id;
     public $title;
     public $content;
-    public $image;
     public $background;
     public $type;
 
@@ -27,9 +26,10 @@ class General extends Model {
 
     }
     
-    public function makePages($title, $content){
-        //$this->connexion->exec("DELETE FROM pages WHERE id = '1'");
-        $this->connexion->exec("INSERT INTO pages (title, content,type) VALUES('$title', '$content', 'index')");
+    public function makePages($title, $content, $background){
+        $this->connexion->exec("DELETE FROM pages WHERE id = '1'");
+        $this->connexion->exec("INSERT INTO pages (id, title, content, type, background) VALUES('1', '$title', '$content', 'index', '$background')");
+
     }
 
     //public function editPages(){
