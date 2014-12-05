@@ -28,35 +28,36 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<label for="modifPhoto">Modifier une photo de la galerie</label>
-				<form method="POST">
-					<div>
-						<?php foreach($listePhoto as $key => $value):{?>
+			<div class="col-md-6">
+				<?php if(!empty($listePhoto)):{?>
+					<label for="modifPhoto">Modifier une photo de la galerie</label>
+					<form method="POST" name="modifPhoto">
 						<div>
+							<?php foreach($listePhoto as $key => $value):{?>
 							<div>
-								<?= $lool?>
-								<?= "<img src='../gallery/".$nameGallery."/".$listePhoto[$key]['url']."'>"; ?>
+								<div id="<?=$listePhoto[$key]["id"]?>">
+									<?= $listePhoto[$key]['$lool']?>
+								</div>
+								<!--<div>
+									<?php//$key ?>
+									<?php//$listePhoto[$key]["id"] ?>
+									<?php//$listePhoto[$key]["id_gallery"] ?>
+									<?php//$listePhoto[$key]["title"] ?>
+									<?php//$listePhoto[$key]["description"] ?>
+									<?php//$listePhoto[$key]["exif"] ?>
+									<?php//$listePhoto[$key]["url"] ?>
+								</div>-->
+								<input type="checkbox">Modifier</input>
+								<input type="radio" name="cover">Cover</input>
+								<!--<input type="button" value="Supprimer" onclick=Delete(<?php//$listePhoto[$key]['id']?>)><br>-->
 							</div>
-							<div>
-								<?= $key ?>
-								<?= $listePhoto[$key]["id"] ?>
-								<?= $listePhoto[$key]["id_gallery"] ?>
-								<?= $listePhoto[$key]["title"] ?>
-								<?= $listePhoto[$key]["description"] ?>
-								<?= $listePhoto[$key]["exif"] ?>
-								<?= $listePhoto[$key]["url"] ?>
-
-							</div>
-							thumbnail<br>
-							<input type="checkbox">Modifier</input>
-							<input type="radio" name="cover">Cover</input><br>
-							<!--<input type="button" value="Supprimer" onclick=Delete(<?php//$listePhoto[$key]['id']?>)><br>-->
+							<?php }endforeach;?>
+							<input type="submit" value="Modifier">
 						</div>
-						<?php }endforeach;?>
-						<input type="submit" value="Modifier"  name="modifPhoto">
-					</div>
-				</form>
+					</form>
+				<?php }else:{
+					echo "Il n'y a pas encore de photos dans cette galerie !";
+				}endif;?>
 			</div>
 		</div>
 	</div>
