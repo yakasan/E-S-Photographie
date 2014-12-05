@@ -26,8 +26,14 @@
 									<input type="file" name="url_bg">
 								</div>
 
+<<<<<<< HEAD
+								<button type="submit" name="btnvalid" class="btn btn-default">Valider</button>
+							</form>
+						</div>
+=======
 								<input type="submit" name="btnvalid" class="btn btn-default" value="Valider"/>
 							</div>
+>>>>>>> dcd667461e883b14e0403d5622b8db844adba249
 					</form>
 				</div>	
 			</div>

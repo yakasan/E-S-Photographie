@@ -1,6 +1,6 @@
 <?php 
 require_once('model/class.model.php');
-require_once('index.php');
+require_once('indexx.php');
 
 if (isset($_POST['login'],$_POST['password'])){
 	$model= New Model();

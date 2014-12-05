@@ -28,7 +28,7 @@ class General extends Model {
     }
     
     public function makePages($title, $content){
-        $this->connexion->exec("DELETE FROM pages WHERE id = '1'");
+        //$this->connexion->exec("DELETE FROM pages WHERE id = '1'");
         $this->connexion->exec("INSERT INTO pages (title, content,type) VALUES('$title', '$content', 'index')");
     }
 
