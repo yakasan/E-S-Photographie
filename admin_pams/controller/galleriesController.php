@@ -102,13 +102,14 @@ $tableData = $gallery->getData();
 
 	} elseif (isset($_POST['uploadPicture'])&& isset($_POST['gallerieName'])) {
 	    // j'ai cliqué sur « uploadPicture »
-	    	//print_r($_POST['uploadPicture']);
-	    	//print_r($_POST['gallerieName']);
-			echo"action upload picture";
+	    	$nameGallery = $_POST['gallerieName'];
+	    	$_SESSION['gallerieNameUpload'] = $gallery->getIdGallery($nameGallery);
+	    	header('Location:indexx.php?page=4');
 
 	} elseif (isset($_POST['supprGallery'])&& isset($_POST['gallerieName'])) {
 	    // j'ai cliqué sur « supprGallery »
 	    	$gallerieName=$_POST['gallerieName'];
+
 		    //print_r($_POST['supprGallery']); 
 		    //print_r($_POST['gallerieName']);
 			destructFolder($gallerieName);
