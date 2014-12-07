@@ -30,9 +30,10 @@
 			- FONCTION AJOUT COVER (SAUF SI C'EST ALEXIS QUI SANS OCCUPE):
 				- SAUVEGARDER UNE PHOTO AVEC TITRE PAR DEFAUT (EX: COVER.JPEG);
 				- AJOUTER UN CHAMP BOOLEEN COVER DANS LA BDD;
-			- FONCTION SUPPRESSION DE PHOTO:
-				- SUPPRESSION DE LA BDD;
-				- SUPPRESSION DU DOSSIER CORRESPONDANT;
+			\- FONCTION SUPPRESSION DE PHOTO:			\
+			\	- SUPPRESSION DE LA BDD;				\		FAIT
+			\	- SUPPRESSION DU DOSSIER CORRESPONDANT;	\
+			- FONCTION VERIFICATION DE L'EXTENSION (POUR PAS UPLOADER N'IMPORTE QUOI);
 
 			A SUPPRIMER ?
 			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
@@ -49,7 +50,7 @@
 				<!--Si $listePhoto n'est pas vide, on affiche ce qui suit, sinon, on affiche un texte-->
 				<?php if(!empty($listePhoto)):{?>
 					<label for="modifPhoto">Modifier une photo de la galerie</label>
-					<form method="POST">
+					<form method="POST" onSubmit="window.location.reload()">
 						<div>
 							<!--Pour chaque photo présente dans le tableau, on affiche la vignette qui va bien-->
 							<?php foreach($listePhoto as $key => $value):{?>
@@ -60,20 +61,20 @@
 								<!--<div>			ça c'est en commentaire parce que je sais pas encore si ça va servir ou pas
 								                                                    /¯/¯/¯/¯/¯/¯\
 									<?php//$key ?>                                 //¯¯¯¯¯¯¯¯¯¯¯\\
-									<?php//$listePhoto[$key]["id"] ?>			   | /-\	 /-\ |						
+									<?php//$listePhoto[$key]["id"] ?>			   ||¯¯¯|	|¯¯¯||						
 									<?php//$listePhoto[$key]["id_gallery"] ?>	 |¯|| o |===| o ||¯|					
-									<?php//$listePhoto[$key]["title"] ?>		 | |¯¯¯¯¯| |¯¯¯¯¯| |
+									<?php//$listePhoto[$key]["title"] ?>		 | | ¯¯¯ | | ¯¯¯ | |
 									<?php//$listePhoto[$key]["description"] ?>	  ¯|	/o¯o\	 |^						
 									<?php//$listePhoto[$key]["exif"] ?>				\\_________//		
 									<?php//$listePhoto[$key]["url"] ?>				 \_________/
 								</div>-->
 								<input type="checkbox" name="checkbox[]" value="<?=$listePhoto[$key]['id']?>">Modifier</input>
 								<input type="radio" name="cover">Cover</input>
-								<!--j'voulais testé un truc, mais ça va surement jarter-->
-								<!--<input type="button" value="Supprimer" onclick=Delete(<?php//$listePhoto[$key]['id']?>)><br>-->
 							</div>
 							<?php }endforeach;?>
+							<br>
 							<input type="submit" value="Modifier" name="modifPhoto">
+							<input type="submit" value="Supprimer" onclick="confirm('Etes-vous sûr de vouloir supprimer cette photo ?');" name="Supprimer">
 						</div>
 					</form>
 				<?php }else:{
@@ -83,7 +84,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<!--Delete(<?php// $listePhoto[$key]['id']?>)-->
 	<br>
 	<br>
 	<br>

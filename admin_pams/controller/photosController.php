@@ -78,6 +78,7 @@ include('model/class.photo.php');
 	
 			//Récupération du chemin de la photo
 			$filename = "../gallery/".$nameGallery."/".$title.".".$extensionThumbnail2;
+			$listePhoto[$key]['chemin'] = $filename;
 				
 			//Valeur pour les vignettes
 			$width = 150;
@@ -91,19 +92,47 @@ include('model/class.photo.php');
 
 		}
 
-		//Si le bouton submit est cliqué et qu'au moins une checkbox est coché...
-		if(isset($_POST['checkbox']) && !empty($_POST['checkbox'])){
-			//Récupération de l'ID des photos cochés
-			$checkbox = $_POST['checkbox'];
-			//Inclusion de la page photosModif.tpl
-			include("view/photosModif.tpl");
-			//Redirection vers la page + transmission de la variable $checkbox
-			http_redirect("Location: view/photosModif.tpl", $checkbox);
-			//MEURT!!!
-			die;
+		//Si le bouton Modifier est cliqué
+		if(isset($_POST['modifPhoto'])){
+			//Si le bouton submit est cliqué et qu'au moins une checkbox est coché...
+			if(isset($_POST['checkbox']) && !empty($_POST['checkbox'])){
+				//Récupération de l'ID des photos cochés
+				$checkbox = $_POST['checkbox'];
+				//Inclusion de la page photosModif.tpl
+				include("view/photosModif.tpl");
+				//Redirection vers la page + transmission de la variable $checkbox
+				http_redirect("Location: view/photosModif.tpl", $checkbox);
+				//MEURT!!!
+				die;
+			}
 		}
-		
+
+		//Si le bouton Supprimer est cliqué et qu'on clique sur OK
+		if(isset($_POST['Supprimer']) && $_POST['Supprimer'] == true){
+			//Si au moins une checkbox est coché
+			if(isset($_POST['checkbox']) && !empty($_POST['checkbox'])){
+				//On récupére les ID
+				$checkbox = $_POST['checkbox'];
+				//Initialisation
+				$deletePhoto = new Photo();
+				//Pour chaque ID récupérées
+				foreach($checkbox as $key => $value){
+					$idHidden = $listePhoto[$key]['id'];
+					//On supprime la photo dans la BDD
+					$deletePhoto->DeletePhoto($idHidden);
+					//On supprime la photo du dossier correspondant
+					unlink($listePhoto[$key]['chemin']);
+					echo "Ok";
+				}
+			}
+		}
 	
+
+
+
+
+
+
 	include("view/photos.tpl");
 	}else{
 		header("Location: ../index.html");

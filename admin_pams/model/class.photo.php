@@ -17,10 +17,8 @@ class Photo extends Model {
 		return $query;
 	}
 
-	function DeletePhoto($id){
-		$query = $this->connexion->prepare("DELETE * FROM photos WHERE `id` = '.$id.'");
-		$query->execute();
-		return $query;
+	function DeletePhoto($idHidden){
+		$this->connexion->exec("DELETE FROM photos WHERE id = ".$idHidden."");
 	}
 
 };
