@@ -77,8 +77,8 @@
 							<input type="submit" value="Supprimer" onclick="confirm('Etes-vous sûr de vouloir supprimer cette photo ?');" name="Supprimer">
 						</div>
 					</form>
+				<!--Le fameux texte qui s'affiche si $listePhoto est vide-->				
 				<?php }else:{
-					//Le fameux texte qui s'affiche si $listePhoto est vide
 					echo "Il n'y a pas encore de photos dans cette galerie !";
 				}endif;?>
 			</div>

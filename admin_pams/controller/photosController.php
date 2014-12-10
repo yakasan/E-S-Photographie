@@ -94,19 +94,26 @@ include('model/class.photo.php');
 
 		//Si le bouton Modifier est cliqué
 		if(isset($_POST['modifPhoto'])){
-			//Si le bouton submit est cliqué et qu'au moins une checkbox est coché...
+			//Si au moins une checkbox est coché
 			if(isset($_POST['checkbox']) && !empty($_POST['checkbox'])){
 				//Récupération de l'ID des photos cochés
 				$checkbox = $_POST['checkbox'];
 				//Inclusion de la page photosModif.tpl
 				include("view/photosModif.tpl");
-				//Redirection vers la page + transmission de la variable $checkbox
-				http_redirect("Location: view/photosModif.tpl", $checkbox);
-				//MEURT!!!
+
+				//BOUTON RETOUR A LA PAGE photos.tpl, A FINIR
+				//if(isset($_POST['retour'])){
+				//		include('controller/photosController.php');
+				//		die;
+				//}
+
+
+				//Un p'tit die, sinon on a une juxtaposition des pages photos.tpl et photosModif.tpl
 				die;
 			}
 		}
 
+		
 		//Si le bouton Supprimer est cliqué et qu'on clique sur OK
 		if(isset($_POST['Supprimer']) && $_POST['Supprimer'] == true){
 			//Si au moins une checkbox est coché
