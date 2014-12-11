@@ -71,7 +71,6 @@
 
 	<!--
 	<div>
-<<<<<<< HEAD
 	 A AJOUTER:
 
 			- FONCTION MODIFICATION PHOTO:
@@ -92,7 +91,6 @@
 
 			A SUPPRIMER ?
 			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
-=======
 		<table>
 			<ul>
 				<li>
@@ -116,7 +114,6 @@
 			</ul>
 			<ul>
 		</table>
->>>>>>> de06a3b3de6629ddd9ad21de0c7c231880fdc60e
 	</div>
 	-->
 
