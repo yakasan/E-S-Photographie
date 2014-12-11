@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="col-md-5">
-				<span class="input-group-addon"> Affichage des miniatures des photos si possible</span><br/>
+				<span class="input-group-addon"> Miniatures des photographies</span><br/>
 				<!--Si $listePhoto n'est pas vide, on affiche ce qui suit, sinon, on affiche un texte-->
 				<?php if(!empty($listePhoto)):{?>
 					<label for="modifPhoto">Modifier une photo de la galerie</label>
@@ -32,20 +32,23 @@
 							<!--Pour chaque photo présente dans le tableau, on affiche la vignette qui va bien-->
 							<?php foreach($listePhoto as $key => $value):{?>
 							<div>
-								<div id="<?=$listePhoto[$key]['id']?>">
-									<?= $listePhoto[$key]['$lool']?>
-								</div>
-								<!--<div>
-									<?php//$key ?>
-									<?php//$listePhoto[$key]["id"] ?>
-									<?php//$listePhoto[$key]["id_gallery"] ?>
-									<?php//$listePhoto[$key]["title"] ?>
-									<?php//$listePhoto[$key]["description"] ?>	
-									<?php//$listePhoto[$key]["exif"] ?>
-									<?php//$listePhoto[$key]["url"] ?>
-								</div>-->
-								<input type="checkbox" name="checkbox[]" value="<?=$listePhoto[$key]['id']?>">Modifier</input>
-								<input type="radio" name="cover">Cover</input>
+								<a class='list-group-item'>
+
+									<div id="<?=$listePhoto[$key]['id']?>">
+										<?= $listePhoto[$key]['$lool']?>
+									</div>
+									<!--<div>
+										<?php//$key ?>
+										<?php//$listePhoto[$key]["id"] ?>
+										<?php//$listePhoto[$key]["id_gallery"] ?>
+										<?php//$listePhoto[$key]["title"] ?>
+										<?php//$listePhoto[$key]["description"] ?>	
+										<?php//$listePhoto[$key]["exif"] ?>
+										<?php//$listePhoto[$key]["url"] ?>
+									</div>-->
+									<input type="checkbox" name="checkbox[]" value="<?=$listePhoto[$key]['id']?>">Sélectionner</input>
+									<input type="radio" name="cover">Définir comme couverture</input>
+								</a>
 							</div>
 							<?php }endforeach;?>
 							<br>
