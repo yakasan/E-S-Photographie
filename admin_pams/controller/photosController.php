@@ -51,7 +51,6 @@ include('model/class.photo.php');
 	
 				//Ajout nouvelle photo BBD
 				$nouvellePhoto->AddPhotoToDBB($idGallery, $title, $desc, $exif, $chemin);
-	
 		}
 	
 		//Initialisation
@@ -91,7 +90,6 @@ include('model/class.photo.php');
 			
 			//On met la balise d'affichage de la vignette dans le tableau associatif, sinon on affichera que la dernière vignette trouvée
 			$listePhoto[$key]['$lool'] = "<img  width='$width' height='$height' src='data:".$extensionThumbnail.";base64,".base64_encode($thumbnail)."'>";
-
 		}
 
 		//Si le bouton Modifier est cliqué
@@ -132,6 +130,7 @@ include('model/class.photo.php');
 					//On supprime la photo du dossier correspondant
 					unlink($listePhoto[$key]['chemin']);
 				}
+				//Refresh la page en cours, très utile
 				header('Location: '.$_SERVER['REQUEST_URI']);
 			}
 		}
