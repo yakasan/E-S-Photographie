@@ -136,7 +136,9 @@ if (isset($_SESSION['login']) && $_SESSION['admin']==1){
 				//On supprime la photo du dossier correspondant
 				unlink($listePhoto[$key]['chemin']);
 				echo "Ok";
+
 			}
+			header('Location: '.$_SERVER['REQUEST_URI']);
 		}
 	}
 
