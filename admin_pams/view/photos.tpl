@@ -24,39 +24,6 @@
 
 			<div class="col-md-5">
 				<span class="input-group-addon"> Affichage des miniatures des photos si possible</span><br/>
-				
-			</div>
-
-		</div>
-	</div>
-	
-	<!--A AJOUTER:
-			- FONCTION MODIFICATION PHOTO:
-				- MODIFIER TITRE AVEC STR_REPLACE;
-				- MODIFIER DESCRIPTION AVEC STR_REPLACE;
-				- MODIFIER PHOTO (UPLOAD UNE A LA PLACE DE L'ACTUELLE) + RECUPERATION EXIFS;
-				- SAUVEGARDE EN BDD ET DANS DOSSIER CORRESPONDANT;
-			- FONCTION AJOUT COVER (SAUF SI C'EST ALEXIS QUI SANS OCCUPE):
-				- SAUVEGARDER UNE PHOTO AVEC TITRE PAR DEFAUT (EX: COVER.JPEG);
-				- AJOUTER UN CHAMP BOOLEEN COVER DANS LA BDD;
-			\- FONCTION SUPPRESSION DE PHOTO:			\
-			\	- SUPPRESSION DE LA BDD;				\		FAIT
-			\	- SUPPRESSION DU DOSSIER CORRESPONDANT;	\
-			- FONCTION VERIFICATION DE L'EXTENSION (POUR PAS UPLOADER N'IMPORTE QUOI);
-
-			A SUPPRIMER ?
-			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
-	-->
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
 				<!--Si $listePhoto n'est pas vide, on affiche ce qui suit, sinon, on affiche un texte-->
 				<?php if(!empty($listePhoto)):{?>
 					<label for="modifPhoto">Modifier une photo de la galerie</label>
@@ -68,15 +35,14 @@
 								<div id="<?=$listePhoto[$key]['id']?>">
 									<?= $listePhoto[$key]['$lool']?>
 								</div>
-								<!--<div>			ça c'est en commentaire parce que je sais pas encore si ça va servir ou pas
-								                                                    /¯/¯/¯/¯/¯/¯\
-									<?php//$key ?>                                 //¯¯¯¯¯¯¯¯¯¯¯\\
-									<?php//$listePhoto[$key]["id"] ?>			   ||¯¯¯|	|¯¯¯||						
-									<?php//$listePhoto[$key]["id_gallery"] ?>	 |¯|| o |===| o ||¯|					
-									<?php//$listePhoto[$key]["title"] ?>		 | | ¯¯¯ | | ¯¯¯ | |
-									<?php//$listePhoto[$key]["description"] ?>	  ¯|	/o¯o\	 |^						
-									<?php//$listePhoto[$key]["exif"] ?>				\\_________//		
-									<?php//$listePhoto[$key]["url"] ?>				 \_________/
+								<!--<div>
+									<?php//$key ?>
+									<?php//$listePhoto[$key]["id"] ?>
+									<?php//$listePhoto[$key]["id_gallery"] ?>
+									<?php//$listePhoto[$key]["title"] ?>
+									<?php//$listePhoto[$key]["description"] ?>	
+									<?php//$listePhoto[$key]["exif"] ?>
+									<?php//$listePhoto[$key]["url"] ?>
 								</div>-->
 								<input type="checkbox" name="checkbox[]" value="<?=$listePhoto[$key]['id']?>">Modifier</input>
 								<input type="radio" name="cover">Cover</input>
@@ -94,11 +60,36 @@
 			</div>
 		</div>
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+
+	<div>
+	A AJOUTER:
+
+			- FONCTION MODIFICATION PHOTO:
+				- MODIFIER TITRE AVEC STR_REPLACE;
+				- MODIFIER DESCRIPTION AVEC STR_REPLACE;
+				- MODIFIER PHOTO (UPLOAD UNE A LA PLACE DE L'ACTUELLE) + RECUPERATION EXIFS;
+				- SAUVEGARDE EN BDD ET DANS DOSSIER CORRESPONDANT;
+
+			- FONCTION AJOUT COVER (SAUF SI C'EST ALEXIS QUI SANS OCCUPE):
+				- SAUVEGARDER UNE PHOTO AVEC TITRE PAR DEFAUT (EX: COVER.JPEG);
+				- AJOUTER UN CHAMP BOOLEEN COVER DANS LA BDD;
+
+			\- FONCTION SUPPRESSION DE PHOTO:			\
+			\	- SUPPRESSION DE LA BDD;				\		FAIT
+			\	- SUPPRESSION DU DOSSIER CORRESPONDANT;	\
+
+			- FONCTION VERIFICATION DE L'EXTENSION (POUR PAS UPLOADER N'IMPORTE QUOI);
+
+			A SUPPRIMER ?
+			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
+	</div>
+
 	<!--Delete(<?php// $listePhoto[$key]['id']?>)-->
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 
 <?php include("inc/footer.inc.php") ?>
