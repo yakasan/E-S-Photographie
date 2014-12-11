@@ -132,6 +132,7 @@ include('model/class.photo.php');
 					//On supprime la photo du dossier correspondant
 					unlink($listePhoto[$key]['chemin']);
 				}
+				header('Location: '.$_SERVER['REQUEST_URI']);
 			}
 		}
 	
