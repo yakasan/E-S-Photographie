@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <span class="navbar-brand" >Titre de la page</span>
+      <span class="navbar-brand" > <?= $_SESSION['namePage'] ?></span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
