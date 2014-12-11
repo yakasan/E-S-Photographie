@@ -11,9 +11,9 @@ if (isset($_POST['idmess'])){
 	$_SESSION['mess']=$recmessindiv;
 	$_SESSION['idmess']=$id;
 	if ($recmessindiv[0]['seen']==1){
-		$txt="Marquer comme 'Pas Vue'";
+		$txt="Marquer comme 'Non lu'";
 	}else{
-		$txt="Marquer comme 'Vue'";
+		$txt="Marquer comme 'Lu'";
 	}
 
 }
@@ -23,11 +23,11 @@ if (isset($_GET['seeing'])){
 	if ($recmessindiv[0]['seen']==1){
 		$list->unseen($id);
 		$recmessindiv[0]['seen']=0;
-		$txt="Marquer comme 'Vue'";
+		$txt="Marquer comme 'Lu'";
 	}else{
 		$list->seen($id);
 		$recmessindiv[0]['seen']=1;
-		$txt="Marquer comme 'Pas Vue'";
+		$txt="Marquer comme 'Non lu'";
 	}
 }
 
