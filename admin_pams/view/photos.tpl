@@ -71,6 +71,7 @@
 
 	<!--
 	<div>
+<<<<<<< HEAD
 	 A AJOUTER:
 
 			- FONCTION MODIFICATION PHOTO:
@@ -91,6 +92,31 @@
 
 			A SUPPRIMER ?
 			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
+=======
+		<table>
+			<ul>
+				<li>
+					<p>A AJOUTER:</p>
+					<p>- FONCTION DE PREVISUALISATION DE LA VIGNETTE AVANT UPLOAD;</p>
+					<ul>
+						<li>
+							<p>- FONCTION AJOUT COVER (SAUF SI C'EST ALEXIS QUI SANS OCCUPE):</p>
+						<p>- SAUVEGARDER UNE PHOTO AVEC TITRE PAR DEFAUT (EX: COVER.JPEG);</p>
+						<p>- AJOUTER UN CHAMP BOOLEEN COVER DANS LA BDD;</p>
+						</li>
+				</ul>
+					<p>- FONCTION VERIFICATION DE L'EXTENSION (POUR PAS UPLOADER N'IMPORTE QUOI);</p>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<p>A SUPPRIMER ?</p>
+					<p>- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;</p>
+				</li>
+			</ul>
+			<ul>
+		</table>
+>>>>>>> de06a3b3de6629ddd9ad21de0c7c231880fdc60e
 	</div>
 	-->
 
