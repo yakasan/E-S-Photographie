@@ -6,22 +6,31 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-5">
 				<!--Formulaire d'ajout de photo-->
-				<label for="addPhoto">Ajouter une photo à la galerie <?= $nameGallery?> (2Mo max)</label>
+				<span class="input-group-addon"> Ajouter une photo à la galerie <?= $nameGallery?> (2Mo max)</span><br/>
 				<form method="POST"  enctype="multipart/form-data">
-					<input type="file" name="photo">
-					<label for="title">Ajouter un titre</label>
-					<input type="text" name="title">
-					<label for="desc">Ajouter une description</label>
-					<input type="text" name="desc">
-					<input type="submit" value="Ajouter" name="addPhoto">
+					<input type="file" name="photo"><br/>
+					<label for="title">Ajouter un titre</label> <br/>
+					<input type="text" name="title"><br/>
+					<label for="desc">Ajouter une description</label><br/>
+					<input type="text" name="desc"><br/><br/>
+					<input type="submit" value="Ajouter" name="addPhoto"><br/>
 				</form>
 			</div>
+
+			<div class="col-md-2">
+			</div>
+
+			<div class="col-md-5">
+				<span class="input-group-addon"> Affichage des miniatures des photos si possible</span><br/>
+				
+			</div>
+
 		</div>
 	</div>
 	
-	A AJOUTER:
+	<!--A AJOUTER:
 			- FONCTION MODIFICATION PHOTO:
 				- MODIFIER TITRE AVEC STR_REPLACE;
 				- MODIFIER DESCRIPTION AVEC STR_REPLACE;
@@ -37,6 +46,7 @@
 
 			A SUPPRIMER ?
 			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
+	-->
 
 	<br>
 	<br>

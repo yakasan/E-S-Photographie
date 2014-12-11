@@ -28,6 +28,12 @@ include('model/class.photo.php');
 	
 				//Récupération du titre taper par l'utilisateur
 				$title = $_POST['title'];
+
+				//remplacement des espaces par des "_"
+				//traitement du titre  
+				$title = strtolower($title);
+				$title = str_replace(" ","_",$title);
+				$title = utf8_encode($title);
 	
 				//Récupération de la description taper par l'utilisateur
 				$desc = $_POST['desc'];
