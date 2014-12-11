@@ -62,6 +62,11 @@
 				}endif;?>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<input type="button" value="Retour aux galeries" class="homebutton" id="btnHome" onClick="window.location = './indexx.php?page=2'" />
+			</div>
+		</div>
 	</div>
 	<br>
 	<br>
