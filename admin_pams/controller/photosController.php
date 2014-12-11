@@ -9,7 +9,6 @@ include('model/class.photo.php');
 		$nameGallery = $_SESSION['gallerieNameUpload'];
 
 		if(isset($_POST['addPhoto'])){
-			//if($_POST['title'] != ''){
 	
 				//Initialisation d'une nouvelle photo
 				$nouvellePhoto = new Photo();
@@ -53,9 +52,6 @@ include('model/class.photo.php');
 				//Ajout nouvelle photo BBD
 				$nouvellePhoto->AddPhotoToDBB($idGallery, $title, $desc, $exif, $chemin);
 	
-			//}else{
-			//	echo "Veuillez ajouté un titre";
-			//}
 		}
 	
 		//Initialisation
@@ -135,7 +131,6 @@ include('model/class.photo.php');
 					$deletePhoto->DeletePhoto($idHidden);
 					//On supprime la photo du dossier correspondant
 					unlink($listePhoto[$key]['chemin']);
-					echo "Ok";
 				}
 			}
 		}
