@@ -69,9 +69,9 @@
 	<br>
 
 
-
+	<!--
 	<div>
-	A AJOUTER:
+	 A AJOUTER:
 
 			- FONCTION MODIFICATION PHOTO:
 				- MODIFIER TITRE AVEC STR_REPLACE;
@@ -92,6 +92,7 @@
 			A SUPPRIMER ?
 			- photosModifController.php, SI J'ARRIVE A UTILISER LE .TPL DEPUIS ICI;
 	</div>
+	-->
 
 	<!--Delete(<?php// $listePhoto[$key]['id']?>)-->
 
